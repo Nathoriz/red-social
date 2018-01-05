@@ -1,64 +1,41 @@
-[debug] [2018-01-05T01:31:13.328Z] ----------------------------------------------------------------------
-[debug] [2018-01-05T01:31:13.338Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\KAMALY\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
-[debug] [2018-01-05T01:31:13.339Z] CLI Version:   3.16.0
-[debug] [2018-01-05T01:31:13.339Z] Platform:      win32
-[debug] [2018-01-05T01:31:13.339Z] Node Version:  v9.0.0
-[debug] [2018-01-05T01:31:13.341Z] Time:          Thu Jan 04 2018 20:31:13 GMT-0500 (Hora est. Pacífico, Sudamérica)
-[debug] [2018-01-05T01:31:13.341Z] ----------------------------------------------------------------------
+[debug] [2018-01-05T01:39:36.158Z] ----------------------------------------------------------------------
+[debug] [2018-01-05T01:39:36.168Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\KAMALY\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-01-05T01:39:36.168Z] CLI Version:   3.16.0
+[debug] [2018-01-05T01:39:36.168Z] Platform:      win32
+[debug] [2018-01-05T01:39:36.168Z] Node Version:  v9.0.0
+[debug] [2018-01-05T01:39:36.171Z] Time:          Thu Jan 04 2018 20:39:36 GMT-0500 (Hora est. Pacífico, Sudamérica)
+[debug] [2018-01-05T01:39:36.171Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2018-01-05T01:31:13.387Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-01-05T01:31:13.388Z] > authorizing via signed-in user
-[debug] [2018-01-05T01:31:13.397Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/red-social1  
+[debug] [2018-01-05T01:39:36.216Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-01-05T01:39:36.216Z] > authorizing via signed-in user
+[debug] [2018-01-05T01:39:36.223Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-01-05T01:39:36.223Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/CwQDyvvpa8cMA_ILzHRG-vJ9noXZB1VXO79e5ipLmjM',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Thu Jan 04 2018 20:39:36 GMT-0500 (Hora est. Pacífico, Sudamérica)
+[debug] [2018-01-05T01:39:36.947Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-05T01:39:37.018Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/red-social1  
   
- Thu Jan 04 2018 20:31:13 GMT-0500 (Hora est. Pacífico, Sudamérica)
-[debug] [2018-01-05T01:31:14.388Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-05T01:31:14.392Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/red-social1/tokens  
+ Thu Jan 04 2018 20:39:37 GMT-0500 (Hora est. Pacífico, Sudamérica)
+[debug] [2018-01-05T01:39:37.908Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-05T01:39:37.910Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/red-social1/tokens  
   
- Thu Jan 04 2018 20:31:14 GMT-0500 (Hora est. Pacífico, Sudamérica)
-[debug] [2018-01-05T01:31:15.163Z] <<< HTTP RESPONSE 200
+ Thu Jan 04 2018 20:39:37 GMT-0500 (Hora est. Pacífico, Sudamérica)
+[debug] [2018-01-05T01:39:38.768Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from 'C:\Users\KAMALY\Desktop\proyectos\red social'...
 [info] 
-[debug] [2018-01-05T01:31:15.176Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/red-social1  
+[debug] [2018-01-05T01:39:38.781Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/red-social1  
   
- Thu Jan 04 2018 20:31:15 GMT-0500 (Hora est. Pacífico, Sudamérica)
-[debug] [2018-01-05T01:31:16.010Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-05T01:31:16.015Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/772159467090/clients/_:getWebAppConfig  
+ Thu Jan 04 2018 20:39:38 GMT-0500 (Hora est. Pacífico, Sudamérica)
+[debug] [2018-01-05T01:39:39.658Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-05T01:39:39.663Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/772159467090/clients/_:getWebAppConfig  
   
- Thu Jan 04 2018 20:31:16 GMT-0500 (Hora est. Pacífico, Sudamérica)
-[debug] [2018-01-05T01:31:16.747Z] <<< HTTP RESPONSE 200
-[info] i  hosting: Serving hosting files from: ./
-[info] +  hosting: Local server: http://localhost:5000
-
-[debug] [2018-01-05T01:13:50.925Z] ----------------------------------------------------------------------
-[debug] [2018-01-05T01:13:50.925Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\KAMALY\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
-[debug] [2018-01-05T01:13:50.925Z] CLI Version:   3.16.0
-[debug] [2018-01-05T01:13:50.925Z] Platform:      win32
-[debug] [2018-01-05T01:13:50.925Z] Node Version:  v9.0.0
-[debug] [2018-01-05T01:13:50.940Z] Time:          Thu Jan 04 2018 20:13:50 GMT-0500 (Hora est. Pacífico, Sudamérica)
-[debug] [2018-01-05T01:13:50.940Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2018-01-05T01:13:50.956Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-01-05T01:13:50.956Z] > authorizing via signed-in user
-[debug] [2018-01-05T01:13:50.971Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/red-social1  
-  
- Thu Jan 04 2018 20:13:50 GMT-0500 (Hora est. Pacífico, Sudamérica)
-[debug] [2018-01-05T01:13:52.007Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-05T01:13:52.023Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/red-social1/tokens  
-  
- Thu Jan 04 2018 20:13:52 GMT-0500 (Hora est. Pacífico, Sudamérica)
-[debug] [2018-01-05T01:13:52.820Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from 'C:\Users\KAMALY\Desktop\proyectos\red social'...
-[info] 
-[debug] [2018-01-05T01:13:52.836Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/red-social1  
-  
- Thu Jan 04 2018 20:13:52 GMT-0500 (Hora est. Pacífico, Sudamérica)
-[debug] [2018-01-05T01:13:53.544Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-05T01:13:53.544Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/772159467090/clients/_:getWebAppConfig  
-  
- Thu Jan 04 2018 20:13:53 GMT-0500 (Hora est. Pacífico, Sudamérica)
-[debug] [2018-01-05T01:13:54.412Z] <<< HTTP RESPONSE 200
+ Thu Jan 04 2018 20:39:39 GMT-0500 (Hora est. Pacífico, Sudamérica)
+[debug] [2018-01-05T01:39:40.447Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: ./
 [info] +  hosting: Local server: http://localhost:5000
 
