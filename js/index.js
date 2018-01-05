@@ -4,29 +4,37 @@ $(document).ready(function () {
     $(".button-collapse").sideNav();
 
     $('#boton').on('click', function () {
-        var provider = new firebase.auth.GoogleAuthProvider();
-        firebase.auth().signInWithPopup(provider).then(function (result) {
-            var token = result.credential.accessToken;
-            var user = result.user;
-            // changeHome();
-            console.log(user);
-            saveDate(user);
-            $('#boton').fadeOut();
-            $(".hide").removeClass();
+        if (!firebase.auth().currentUser) {
+            var provider = new firebase.auth.GoogleAuthProvider();
+            firebase.auth().signInWithPopup(provider).then(function (result) {
+                var token = result.credential.accessToken;
+                var user = result.user;
+                // changeHome();
+                console.log(user);
+                saveDate(user);
+                $('#boton').fadeOut();
+                $(".hide").removeClass();
 
-            $('#showPhoto').append("<img src='" + user.photoURL + "' />");
+                $('#showPhoto').append("<img src='" + user.photoURL + "' />");
 
 
-        }).catch(function (error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // The email of the user's account used.
-            var email = error.email;
-            // The firebase.auth.AuthCredential type that was used.
-            var credential = error.credential;
-            // ...
-        });
+            }).catch(function (error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // The email of the user's account used.
+                var email = error.email;
+                // The firebase.auth.AuthCredential type that was used.
+                var credential = error.credential;
+                if (error.code === 'auth/account-exists-with-different-credential') {
+                    alert('Es el mismo usuario');
+
+                }
+            });
+        }
+        else {
+            firebase.auth().signOut();
+        }
     })
 
     // funcion para que se guarde la informacion automaticamente en firebase sin repetirse

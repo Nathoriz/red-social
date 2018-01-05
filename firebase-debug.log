@@ -20,3 +20,22 @@
 [debug] [2018-01-05T01:11:32.565Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/red-social1  
   
  Thu Jan 04 2018 20:11:32 GMT-0500 (Hora est. Pacífico, Sudamérica)
+[debug] [2018-01-05T01:11:33.360Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-05T01:11:33.360Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/red-social1/tokens  
+  
+ Thu Jan 04 2018 20:11:33 GMT-0500 (Hora est. Pacífico, Sudamérica)
+[debug] [2018-01-05T01:11:34.060Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\KAMALY\Desktop\proyectos\red social'...
+[info] 
+[debug] [2018-01-05T01:11:34.060Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/red-social1  
+  
+ Thu Jan 04 2018 20:11:34 GMT-0500 (Hora est. Pacífico, Sudamérica)
+[debug] [2018-01-05T01:11:34.841Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-05T01:11:34.841Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/772159467090/clients/_:getWebAppConfig  
+  
+ Thu Jan 04 2018 20:11:34 GMT-0500 (Hora est. Pacífico, Sudamérica)
+[debug] [2018-01-05T01:11:35.809Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: ./
+[info] +  hosting: Local server: http://localhost:5000
+
