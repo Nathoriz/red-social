@@ -1,6 +1,19 @@
-.formulario {
-    background: red;
-    outline: 1px solid red;
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
+body .formulario {
+    background: red ;
+    outline: 1px solid red;
+    margin: 0;
+}
 
+#cirulo-btn {
+    border-radius: 20px;
+}
+
+.fondonegro {
+    color: red;
+}
