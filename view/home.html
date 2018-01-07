@@ -5,62 +5,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="../css/main.css">
-
-  <link rel="stylesheet" href="../vendors/materialize/css/materialize.min.css">
-  <!--Import Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <title>App</title>
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/ed-grid.min.css">
+  <title>home</title>
 </head>
 
-<body>
+<body class="">
 
-
-<!-- nav de materialize -->
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Logo</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
-      </ul>
-    </div>
-  </nav>
-          
+  <div class="ed-container">  
+    <img  class="circle ed-item s3" src="http://lorempixel.com/400/200" alt="">
+    <div class="ed-item s4"> Inicio</div>
+  </div>
 
 
 
 
+  <!-- nav -->
+  <ul class="ed-menu s-horizontal nav-bar">
+    <li>
+      <a href="#">Item</a>
+    </li>
+    <li>
+      <a href="#">Item</a>
+    </li>
+    <li>
+      <a href="#">Item</a>
+    </li>
+    <li>
+      <a href="#">Item</a>
+    </li>
+  </ul>
+  <button id="buton">click</button>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
-  <script src="../js/index.js"></script>
-  <!-- <script src="vendors/materialize/js/materialize.min.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
-  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-  <script>
 
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyAckNjYavFDbVEYJEE70JXM5-tU0-wFuIs",
-      authDomain: "red-social1.firebaseapp.com",
-      databaseURL: "https://red-social1.firebaseio.com",
-      projectId: "red-social1",
-      storageBucket: "red-social1.appspot.com",
-      messagingSenderId: "772159467090"
-    };
-    firebase.initializeApp(config);
-  </script>
+  <script src="../vendors/js/jquery-3.2.1.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> -->
+  <!-- <script src="../vendors/materialize/js/materialize.min.js"></script> -->
+  <script src="../js/home.js"></script>
 </body>
 
 </html>
