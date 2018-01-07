@@ -114,8 +114,7 @@ $(document).ready(function () {
         var regex = /^[a-zA-Z]*$/;
         if (regex.test(input) && input.length > 3) {
             verifyName = true;
-            // activeBoton(); 
-            debugger
+            activeBoton();            
             $buton.removeClass('disabled');
         } else {
             desactiveBoton();
