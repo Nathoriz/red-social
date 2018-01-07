@@ -20,22 +20,22 @@
     <div class="nav-wrapper row purple accent-3">
       <ul class="col s8 offset-s2">
         <li>
-          <a href="#">
+          <a href="#" id="perfil">
             <i class="material-icons">person</i>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="#" id="home">
             <i class="material-icons">home</i>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="#" id="search">
             <i class="material-icons">search</i>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="#" id="notifi">
             <i class="material-icons">notifications_active</i>
           </a>
         </li>
@@ -70,7 +70,7 @@
   </div>
 
   <!-- AQUI SE ENCUENTRA LA ESTRUCTURA DEL PERFIL__________________ -->
-  <div class="card hide">
+  <div class="ide1 card hide">
     <div class="card-image waves-effect waves-block waves-light">
       <img class="activator circle" src="https://scontent.xx.fbcdn.net/v/t1.0-1/p100x100/12308548_1652013631729953_5748824127610103583_n.jpg?oh=446bc36f5ff19c8b13edb3a02b1291aa&oe=5ABE898B">
     </div>
@@ -99,7 +99,7 @@
 
 
   <!-- AQUI SE ENCUENTRA LA ESTRUCTURA DE LAS NOTIFICACIONES__________________ -->
-  <div class="col s12 m8 offset-m2 l6 offset-l3 hide">
+  <div class="ide2 col s12 m8 offset-m2 l6 offset-l3">
     <div class="card-panel grey lighten-5 z-depth-1">
       <div class="row valign-wrapper">
         <div class="col s2">
@@ -138,30 +138,38 @@
   </div> -->
 
 
-  <div class="card">
-      <div class="card-image waves-effect waves-block waves-light">
-        <!-- <p>hola , este es mi meme</p> -->
-        <img class="activator" src="https://scontent.xx.fbcdn.net/v/t1.0-1/p100x100/12308548_1652013631729953_5748824127610103583_n.jpg?oh=446bc36f5ff19c8b13edb3a02b1291aa&oe=5ABE898B">
-      </div>
-      <div class="card-content">
-        <span class="card-title activator"><i class="material-icons right">message</i></span>
-        <span class="card-title "><i class="material-icons ">favorite</i></span>
-       
-        <p><i class="material-icons right">favorite</i></p>
-      </div>
-      <div class="card-reveal">
-        <span class="card-title">Comentario<i class="material-icons right">close</i></span>
-       
-              
-                <div class="input-field col s6">
-                  <i class="material-icons prefix">mode_edit</i>
-                  <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-                  <!-- <label for="icon_prefix2">First Name</label> -->
-                </div>
-             
-         
-      </div>
+  <div class="ide3 card hide">
+    <div class="card-image waves-effect waves-block waves-light">
+      <!-- <p>hola , este es mi meme</p> -->
+      <img class="activator" src="https://scontent.xx.fbcdn.net/v/t1.0-1/p100x100/12308548_1652013631729953_5748824127610103583_n.jpg?oh=446bc36f5ff19c8b13edb3a02b1291aa&oe=5ABE898B">
     </div>
+    <div class="card-content">
+      <span class="card-title activator">
+        <i class="material-icons right">message</i>
+      </span>
+      <span class="card-title ">
+        <i class="material-icons ">favorite</i>
+      </span>
+
+      <p>
+        <i class="material-icons right">favorite</i>
+      </p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title">Comentario
+        <i class="material-icons right">close</i>
+      </span>
+
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix">mode_edit</i>
+        <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+        <!-- <label for="icon_prefix2">First Name</label> -->
+      </div>
+
+
+    </div>
+  </div>
 
 
 
@@ -169,7 +177,8 @@
   <script src="../vendors/js/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <!-- <script src="../vendors/materialize/js/materialize.min.js"></script> -->
-  <script src="../materialize.js"></script>
+  <!-- <script src="../materialize.js"></script> -->
+  <script src="../js/home.js"></script>
 </body>
 
 </html>
