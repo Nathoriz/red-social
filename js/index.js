@@ -79,9 +79,11 @@ $(document).ready(function () {
     $last = $('#last_name');
     $email = $('#email');
     $checkbox = $("#test5");
-    $buton = $('#btn-registrar');
+    $butonSign = $('#btn-registrar');
     $password = $('#password');
     $logOut = $('#btn-logout');
+    $btnAauth = $('#btn-firebaseAuth');
+
 
     $emailModal = $('#emailModal');
     $passwordModal = $('#passwordModal');
@@ -95,23 +97,26 @@ $(document).ready(function () {
     var verifyPassword = false;
 
     //Agregamos eventos a nuestros input
-    $password.on('keyup focus', function () {
+    $password.on('keyup', function () {       
         var input = $password.val();
         // var regex = /^[a-zA-Z]*$/;
         if (input.length > 3) {
             verifyPassword = true;
-            activeBoton()
+            activeBoton();
         } else {
             desactiveBoton();
         }
     });
 
-    $name.on('keyup focus', function () {
+    $name.on('keyup', function (e) {
+        console.log(e);
         var input = $name.val();
         var regex = /^[a-zA-Z]*$/;
         if (regex.test(input) && input.length > 3) {
             verifyName = true;
-            activeBoton()
+            // activeBoton(); 
+            debugger
+            $buton.removeClass('disabled');
         } else {
             desactiveBoton();
         }
@@ -150,14 +155,16 @@ $(document).ready(function () {
     });
 
     function activeBoton() {
-        if (verifyName && verifyLastName && verifyEmail && verifycheck && verifyPassword) {
-            $buton.removeClass('disabled');
+        //verifyName && verifyLastName && verifycheck
+        if (verifyName && verifyLastName && verifycheck && verifyEmail) {            
+            $butonSign.removeClass('disabled');
         }
     }
 
     function desactiveBoton() {
-        $buton.addClass('disabled');
-    }    
+        $butonSign.addClass('disabled');
+    }
+
     $btnLogin.on('click', function () {
         var $email = $emailModal.val();
         var $password = $passwordModal.val();
@@ -167,23 +174,24 @@ $(document).ready(function () {
 
     })
 
-    $buton.on('click', function () {
+    $btnAauth.on('click', function () {
         var email = $email.val();
         var password = $password.val();
         var auth = firebase.auth();
         var promise = auth.createUserWithEmailAndPassword(email, password);
         promise.catch(e => console.log(e.message));
+        $('.order-1').addClass('hide');
+        $('.order-2').removeClass('hide');
     })
 
-    // $buton.on('click', function () {
-    //     firebase.database().ref('registro').push({
-    //         nombre: $name.val(),
-    //         apellido: $last.val(),
-    //         email: $email.val(),
-    //         clave: $password.val(),
-    //         acepta: $checkbox.val()
-    //     })
-    // })
+    $butonSign.on('click', function () {
+        firebase.database().ref('registro').push({
+            nombre: $name.val(),
+            apellido: $last.val(),
+            email: $email.val(),
+            acepta: $checkbox.val()
+        })
+    })
 
     $logOut.on('click', function (e) {
         firebase.auth().onAuthStateChanged(function (user) {

@@ -7,42 +7,36 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="../css/home.css">
   <link rel="stylesheet" href="../css/ed-grid.min.css">
+  <link rel="stylesheet" href="../vendors/materialize/css/materialize.min.css">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <title>home</title>
 </head>
 
 <body class="">
 
-  <div class="ed-container">  
-    <img  class="circle ed-item s3" src="http://lorempixel.com/400/200" alt="">
-    <div class="ed-item s4"> Inicio</div>
+  
+    <!-- <img  class="circle ed-item s3" src="http://lorempixel.com/400/200" alt=""> -->
+  
   </div>
 
 
+  <!-- Element Showed -->
+  <a id="menu" class="waves-effect waves-light btn btn-floating" ><i class="material-icons">menu</i></a>
 
-
-  <!-- nav -->
-  <ul class="ed-menu s-horizontal nav-bar">
-    <li>
-      <a href="#">Item</a>
-    </li>
-    <li>
-      <a href="#">Item</a>
-    </li>
-    <li>
-      <a href="#">Item</a>
-    </li>
-    <li>
-      <a href="#">Item</a>
-    </li>
-  </ul>
-  <button id="buton">click</button>
-
-
+  <!-- Tap Target Structure -->
+  <div class="tap-target" data-activates="menu">
+    <div class="tap-target-content">
+      <h5>Title</h5>
+      <p>A bunch of text</p>
+    </div>
+  </div>
+          
 
   <script src="../vendors/js/jquery-3.2.1.min.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <!-- <script src="../vendors/materialize/js/materialize.min.js"></script> -->
-  <script src="../js/home.js"></script>
+  <script src="../materialize.js"></script>
 </body>
 
 </html>
