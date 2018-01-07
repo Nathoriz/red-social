@@ -1,14 +1,10 @@
 
-.formulario {
-    background: red ;
-    outline: 1px solid red;
-    margin: 0;
+.butons {   
+    font-size: 8px;
 }
 
-a .cirulo-btn {
+.butons div a {   
+    font-size: 8px;
     border-radius: 20px;
 }
 
-.fondonegro {
-    color: red;
-}

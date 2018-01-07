@@ -73,7 +73,6 @@ $(document).ready(function () {
         }
         firebase.database().ref('redes/' + user.uid).set(usuario);
     }
-
     // AQUI HACEMOS LA VALIDACION DE NUESTRO BOTON INDEPENDIENTE REGISTRO 
     // Llamando elementos del html 
     $name = $('#first_name');
@@ -87,11 +86,6 @@ $(document).ready(function () {
     $emailModal = $('#emailModal');
     $passwordModal = $('#passwordModal');
     $btnLogin = $('#btn-login');
-
-    //boton donde se puede escribir en la base de datos y enviarse a firebase
-    // $buton.on('click', function () {
-
-    // })
 
     //Variables verificadoras booleanas
     var verifyName = false;
@@ -110,7 +104,6 @@ $(document).ready(function () {
         } else {
             desactiveBoton();
         }
-
     });
 
     $name.on('keyup focus', function () {
@@ -156,8 +149,6 @@ $(document).ready(function () {
 
     });
 
-
-
     function activeBoton() {
         if (verifyName && verifyLastName && verifyEmail && verifycheck && verifyPassword) {
             $buton.removeClass('disabled');
@@ -166,23 +157,25 @@ $(document).ready(function () {
 
     function desactiveBoton() {
         $buton.addClass('disabled');
-    }
-
-
-
-
-    $('#btn-login').on('click', function () {
+    }    
+    $btnLogin.on('click', function () {
         var $email = $emailModal.val();
         var $password = $passwordModal.val();
         var auth = firebase.auth();
         var promise = auth.signInWithEmailAndPassword($email, $password);
-        promise.catch(e => console.log(e.message));
+        promise.catch(e => console.log("hola"));
+
     })
 
     $buton.on('click', function () {
         var email = $email.val();
         var password = $password.val();
         var auth = firebase.auth();
+        var promise = auth.createUserWithEmailAndPassword(email, password);
+        promise.catch(e => console.log(e.message));
+    })
+
+    $buton.on('click', function () {
         firebase.database().ref('registro').push({
             nombre: $name.val(),
             apellido: $last.val(),
@@ -190,11 +183,9 @@ $(document).ready(function () {
             clave: $password.val(),
             acepta: $checkbox.val()
         })
-        var promise = auth.createUserWithEmailAndPassword(email, password);
-        console(promise);
-        promise.catch(e => console.log(e.message));
     })
-    $logOut.on('click', function (e) {        
+
+    $logOut.on('click', function (e) {
         firebase.auth().onAuthStateChanged(function (user) {
             if (user) {
                 console.log(user);
