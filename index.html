@@ -9,70 +9,109 @@
   <link rel="stylesheet" href="vendors/materialize/css/materialize.min.css">
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
   <title>App</title>
 </head>
 
 <body>
 
 
-    <div id="showPhoto"></div>
-    <div id="namePerson"></div>
+  <div id="showPhoto"></div>
+  <div id="namePerson"></div>
 
 
-    <div class="row">
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s6">
-              <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-              <label for="first_name">First Name</label>
-            </div>
-            <div class="input-field col s6">
-              <input id="last_name" type="text" class="validate">
-              <label for="last_name">Last Name</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="password" type="password" class="validate">
-              <label for="password">Password</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="email" type="email" class="validate">
-              <label for="email">Email</label>
-            </div>
-          </div>
-
-           <p>
-              <input type="checkbox" id="test5" />
-              <label for="test5">Acepto</label>
-            </p>
-        </form>
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
       </div>
 
-      <a class="waves-effect waves-light btn disabled" id="btn-registrar"  >Registrar</a>
-      <a class="waves-effect waves-light btn" id="btn-google">Google</a>   
-      <a class="waves-effect waves-light btn" id="btn-facebook">Facebook</a>   
 
-    <script src="vendors/js/jquery-3.2.1.min.js"></script>
-    <!-- <script src="vendors/materialize/js/materialize.min.js"></script> -->
-    <script src="vendors/materialize/js/materialize.min.js"></script>
+
+      <div class="input-field">
+        <select>
+            <option value="" disabled selected>País</option>
+            <option value="+51">Perú +51</option>
+            <option value="+54">Argentina +54</option>
+            <option value="+55">Colombia +55</option>
+        </select>
+        <!-- <label>País</label> -->
+    </div>
+
+    <p>
+      <input type="checkbox" id="test5" />
+      <label for="test5">Acepto</label>
+    </p>
+    </form>
+  </div>
+
+  <a class="waves-effect waves-light btn disabled" id="btn-registrar">Registrar</a>
+  <a class="waves-effect waves-light btn" id="btn-google">Google</a>
+  <a class="waves-effect waves-light btn" id="btn-facebook">Facebook</a>
+
+  <!-- Modal Trigger -->
+  <a class="waves-effect waves-light modal-trigger" href="#modal1">Ya tengo una cuenta</a>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+        <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="emailModal" type="email" class="validate">
+          <label for="emailModal">Email</label>
+        </div>
+      </div>
+      <div class="row">
+          <div class="input-field col s12">
+            <input id="passwordModal" type="password" class="validate">
+            <label for="password">Password</label>
+          </div>
+        </div>
+      </form>
+    <div class="modal-footer">
+      <a href="#!" id="btn-sign" class="modal-action modal-close waves-effect waves-green btn-flat">Ingresar</a>
+    </div>
+  </div>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="materialize.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
     <script>
-
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyAckNjYavFDbVEYJEE70JXM5-tU0-wFuIs",
-        authDomain: "red-social1.firebaseapp.com",
-        databaseURL: "https://red-social1.firebaseio.com",
-        projectId: "red-social1",
-        storageBucket: "red-social1.appspot.com",
-        messagingSenderId: "772159467090"
-      };
-      firebase.initializeApp(config);
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAckNjYavFDbVEYJEE70JXM5-tU0-wFuIs",
+            authDomain: "red-social1.firebaseapp.com",
+            databaseURL: "https://red-social1.firebaseio.com",
+            projectId: "red-social1",
+            storageBucket: "red-social1.appspot.com",
+            messagingSenderId: "772159467090"
+        };
+        firebase.initializeApp(config);
     </script>
-    <script src="js/index.js"></script>
+   
+
 </body>
 
 </html>

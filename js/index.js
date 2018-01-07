@@ -1,24 +1,7 @@
 
 $(document).ready(function () {
-    //Nav mobile Materialize
-    // $(".button-collapse").sideNav();
-
-    //Materialize fecha de nacimiento para formulario
-    // $('.datepicker').pickadate({
-    //     selectMonths: true, // Creates a dropdown to control month
-    //     selectYears: 90, // Creates a dropdown of 15 years to control year,
-    //     today: 'Today',
-    //     clear: 'Clear',
-    //     close: 'Ok',
-    //     closeOnSelect: false // Close upon selecting a date,
-    //   });
-
-
-
-
 
     //Agregando funcionalidad al boton de facebook 
-
     $('#btn-facebook').on('click', loginFacebook);
     function loginFacebook() {
         if (!firebase.auth().currentUser) {
@@ -91,10 +74,21 @@ $(document).ready(function () {
         firebase.database().ref('redes/' + user.uid).set(usuario);
     }
 
+    // AQUI HACEMOS LA VALIDACION DE NUESTRO BOTON INDEPENDIENTE REGISTRO 
+    // Llamando elementos del html 
+    $name = $('#first_name');
+    $last = $('#last_name');
+    $email = $('#email');
+    $checkbox = $("#test5");
+    $buton = $('#btn-registrar');
+    $password = $('#password');
 
+    $emailModal = $('#emailModal');
+    $passwordModal = $('#passwordModal');
+    $btnSign = $('#btn-sign');
 
     //boton donde se puede escribir en la base de datos y enviarse a firebase
-    $('#btn-registrar').on('click', function () {
+    $buton.on('click', function () {
         firebase.database().ref('registro').set({
             nombre: $name.val(),
             apellido: $last.val(),
@@ -104,17 +98,6 @@ $(document).ready(function () {
         })
     })
 
-
-// AQUI HACEMOS LA VALIDACION DE NUESTRO BOTON INDEPENDIENTE REGISTRO 
-    // Llamando elementos del html 
-    $name = $('#first_name');
-    $last = $('#last_name');
-    $email = $('#email');
-    $checkbox = $("#test5");
-    $buton = $('#btn-registrar');
-    $password = $('#password');
-
-
     //Variables verificadoras booleanas
     var verifyName = false;
     var verifyLastName = false;
@@ -123,7 +106,6 @@ $(document).ready(function () {
     var verifyPassword = false;
 
     //Agregamos eventos a nuestros input
-
     $password.on('keyup focus', function () {
         var input = $password.val();
         // var regex = /^[a-zA-Z]*$/;
@@ -134,9 +116,7 @@ $(document).ready(function () {
             desactiveBoton();
         }
 
-
     });
-
 
     $name.on('keyup focus', function () {
         var input = $name.val();
@@ -147,8 +127,6 @@ $(document).ready(function () {
         } else {
             desactiveBoton();
         }
-
-
     });
 
     $last.on('keyup focus', function () {
@@ -160,8 +138,6 @@ $(document).ready(function () {
         } else {
             desactiveBoton();
         }
-
-
     });
 
     $email.on('keyup focus', function () {
@@ -184,15 +160,16 @@ $(document).ready(function () {
         }
 
     });
-    $buton.on('click', function () {
-        $name.val("")
-        $last.val("");
-        $email.val("")
-        $checkbox.val("");
-        $buton.val("");
-        // window.location.href = "final.html";
-        alert('datos enviados')
-    });
+
+    // $buton.on('click', function () {
+    //     $name.val("")
+    //     $last.val("");
+    //     $email.val("")
+    //     $checkbox.val("");
+    //     $password.val("");
+    //     // window.location.href = "final.html";
+    //     alert('datos enviados')
+    // });
 
     function activeBoton() {
         if (verifyName && verifyLastName && verifyEmail && verifycheck && verifyPassword) {
@@ -205,5 +182,50 @@ $(document).ready(function () {
     }
 
 
+ 
 
+    $btnSign.on('click', function () {
+        var email = $emailModal.val();
+        var password = $passwordModal.val();
+        var auth = firebase.auth();
+
+        var promise = auth.signInWithEmailAndPassword(email, password);
+        promise.catch(function (error) {
+
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+
+            // [START_EXCLUDE]
+            if (errorCode === 'auth/wrong-password') {
+                alert('Wrong password.');
+            } else {
+                alert(errorMessage + " No hay registro de usuario correspondiente a este identificador. El usuario puede haber sido eliminado");
+            }
+            console.log(errorMessage);
+            //    document.getElementById('quickstart-sign-in').disabled = false;
+            // [END_EXCLUDE]
+        });
+    })
+
+    $buton.on('click', function () {
+        var email = $email.val();
+        var password = $password.val();
+        var auth = firebase.auth();
+
+        var promise = auth.createUserWithEmailAndPassword(email, password);
+        promise.catch(function (error) {
+
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // [START_EXCLUDE]
+            if (errorCode == 'auth/weak-password') {
+                alert('The password is too weak.');
+            } else {
+                alert(errorMessage);
+            }
+            console.log(error);
+            // [END_EXCLUDE]
+        });
+    })
 })
