@@ -82,21 +82,16 @@ $(document).ready(function () {
     $checkbox = $("#test5");
     $buton = $('#btn-registrar');
     $password = $('#password');
+    $logOut = $('#btn-logout');
 
     $emailModal = $('#emailModal');
     $passwordModal = $('#passwordModal');
-    $btnSign = $('#btn-sign');
+    $btnLogin = $('#btn-login');
 
     //boton donde se puede escribir en la base de datos y enviarse a firebase
-    $buton.on('click', function () {
-        firebase.database().ref('registro').set({
-            nombre: $name.val(),
-            apellido: $last.val(),
-            email: $email.val(),
-            clave: $password.val(),
-            acepta: $checkbox.val()
-        })
-    })
+    // $buton.on('click', function () {
+
+    // })
 
     //Variables verificadoras booleanas
     var verifyName = false;
@@ -161,15 +156,7 @@ $(document).ready(function () {
 
     });
 
-    // $buton.on('click', function () {
-    //     $name.val("")
-    //     $last.val("");
-    //     $email.val("")
-    //     $checkbox.val("");
-    //     $password.val("");
-    //     // window.location.href = "final.html";
-    //     alert('datos enviados')
-    // });
+
 
     function activeBoton() {
         if (verifyName && verifyLastName && verifyEmail && verifycheck && verifyPassword) {
@@ -182,50 +169,50 @@ $(document).ready(function () {
     }
 
 
- 
 
-    $btnSign.on('click', function () {
-        var email = $emailModal.val();
-        var password = $passwordModal.val();
+
+    $('#btn-login').on('click', function () {
+        var $email = $emailModal.val();
+        var $password = $passwordModal.val();
         var auth = firebase.auth();
-
-        var promise = auth.signInWithEmailAndPassword(email, password);
-        promise.catch(function (error) {
-
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-
-            // [START_EXCLUDE]
-            if (errorCode === 'auth/wrong-password') {
-                alert('Wrong password.');
-            } else {
-                alert(errorMessage + " No hay registro de usuario correspondiente a este identificador. El usuario puede haber sido eliminado");
-            }
-            console.log(errorMessage);
-            //    document.getElementById('quickstart-sign-in').disabled = false;
-            // [END_EXCLUDE]
-        });
+        var promise = auth.signInWithEmailAndPassword($email, $password);
+        promise.catch(e => console.log(e.message));
     })
 
     $buton.on('click', function () {
         var email = $email.val();
         var password = $password.val();
         var auth = firebase.auth();
-
+        firebase.database().ref('registro').push({
+            nombre: $name.val(),
+            apellido: $last.val(),
+            email: $email.val(),
+            clave: $password.val(),
+            acepta: $checkbox.val()
+        })
         var promise = auth.createUserWithEmailAndPassword(email, password);
-        promise.catch(function (error) {
-
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // [START_EXCLUDE]
-            if (errorCode == 'auth/weak-password') {
-                alert('The password is too weak.');
+        console(promise);
+        promise.catch(e => console.log(e.message));
+    })
+    $logOut.on('click', function (e) {        
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                console.log(user);
+                var displayName = user.displayName;
+                var email = user.email;
+                var emailVerified = user.emailVerified;
+                var photoURL = user.photoURL;
+                var isAnonymous = user.isAnonymous;
+                var uid = user.uid;
+                var providerData = user.providerData;
+                $logOut.removeClass('hide');
             } else {
-                alert(errorMessage);
+                console.log('no logeado');
+                $logOut.addClass('hide');
+                // User is signed out.
+                // ...
             }
-            console.log(error);
-            // [END_EXCLUDE]
         });
+
     })
 })
