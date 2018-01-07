@@ -175,15 +175,15 @@ $(document).ready(function () {
         promise.catch(e => console.log(e.message));
     })
 
-    $buton.on('click', function () {
-        firebase.database().ref('registro').push({
-            nombre: $name.val(),
-            apellido: $last.val(),
-            email: $email.val(),
-            clave: $password.val(),
-            acepta: $checkbox.val()
-        })
-    })
+    // $buton.on('click', function () {
+    //     firebase.database().ref('registro').push({
+    //         nombre: $name.val(),
+    //         apellido: $last.val(),
+    //         email: $email.val(),
+    //         clave: $password.val(),
+    //         acepta: $checkbox.val()
+    //     })
+    // })
 
     $logOut.on('click', function (e) {
         firebase.auth().onAuthStateChanged(function (user) {
