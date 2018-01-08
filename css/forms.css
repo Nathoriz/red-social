@@ -1,0 +1,21 @@
+/* Estilos form1 */
+/* .container {
+  padding-top: 3em;
+
+} */
+
+.bg-user {
+  background-image: url(../assets/images/bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h5 {
+  color: #ffffff;
+}
+
+
+a>.border {
+  border-radius: 20px;
+}
