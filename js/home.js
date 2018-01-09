@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function() {
   iPerfil = $('#perfil');
   iHome = $('#home');
   iSearch = $('#search');
@@ -7,13 +7,13 @@ $(document).ready(function(){
 
   $('.modal').modal();
   
-  iPerfil.on('click',function(){
+  iPerfil.on('click',function() {
     $('.ide2').addClass('hide');
     search.addClass('hide');
     $('.ide1').removeClass('hide');
   
   })
-  iHome.on('click',function(){
+  iHome.on('click',function() {
     $('.ide1').addClass('hide');
     $('.ide2').addClass('hide');
     search.addClass('hide');
@@ -21,19 +21,19 @@ $(document).ready(function(){
   
   })
   
-  iSearch.on('click', function(){
+  iSearch.on('click', function() {
     $('.ide1').addClass('hide');
     $('.ide2').addClass('hide');
     search.removeClass('hide');
   })
 
-  iNoti.on('click',function(){
+  iNoti.on('click',function() {
     $('.ide2').removeClass('hide');
     $('.ide1').addClass('hide');
     search.addClass('hide');
   })
 | 
-  $('.friend').on('click', function(){
+  $('.friend').on('click', function() {
     alert('dsjgf');
   })
 
