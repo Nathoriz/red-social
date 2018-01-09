@@ -57,29 +57,59 @@
   </div>
   
 
-  <!-- BOTON FLOTANDO CON LAS OPCIONES DE PUUBLICACION____________________ -->
+  <!-- BOTON FLOTANDO CON LAS OPCIONES DE PUBLICACION____________________ -->
   <div class="fixed-action-btn horizontal click-to-toggle">
-    <a class="btn-floating btn-large  teal accent-3">
-      <i class="material-icons">menu</i>
-    </a>
-    <ul class="">
-      <li>
-        <a class="btn-floating red">
-          <i class="material-icons">mode_edit</i>
-        </a>
-      </li>
-      <li>
-        <a class="btn-floating yellow darken-1">
-          <i class="material-icons">chat</i>
-        </a>
-      </li>
-      <li>
-        <a class="btn-floating green">
-          <i class="material-icons">publish</i>
-        </a>
-      </li>
-      <!-- <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li> -->
-    </ul>
+      <a class="btn-floating btn-large teal accent-3">
+          <i class="material-icons">menu</i>
+      </a>
+      <ul class="">
+          <li>
+              <a class="waves-effect waves-light modal-trigger btn-floating red" href="#modal1">
+                  <i class="material-icons">mode_edit</i>
+              </a>
+          </li>
+          <li>
+              <a class="waves-effect waves-light modal-trigger btn-floating yellow darken-1" href="#modal2">
+                  <i class="material-icons">chat</i>
+              </a>
+          </li>
+      </ul>
+  </div>
+  <!-- Modal Structure 1-->
+  <div id="modal1" class="modal">
+      <div class="modal-content">
+          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat right">X</a>
+          <div class="input-field col s6">
+              <i class="material-icons prefix">account_circle</i>
+              <textarea id="icon_prefix2" class="materialize-textarea" placeholder="¿Qué compartiras hoy?"></textarea>
+              <!-- <label for="icon_prefix2"></label> -->
+          </div>
+      </div>
+      <div class="modal-footer">
+          <div class="row">
+              <div class="file-field input-field col s3">
+                  <div class="btn file-path-wrapper">
+                      <span>File</span>
+                      <input type="file" class="file-path validate">
+                  </div>
+                  <div class="file-path-wrapper">
+                      <input class="" type="text">
+                  </div>
+              </div>
+          </div>
+          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Enviar</a>
+      </div>
+  </div>
+
+  <!-- Modal Structure 2 -->
+  <div id="modal2" class="modal">
+      <div class="modal-content">
+          <h4>no sabo</h4>
+          <p>A bunch of text</p>
+      </div>
+      <div class="modal-footer">
+          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      </div>
   </div>
 
   <!-- AQUI SE ENCUENTRA LA ESTRUCTURA DEL PERFIL__________________ -->

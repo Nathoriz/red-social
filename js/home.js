@@ -4,6 +4,8 @@ $(document).ready(function(){
   iSearch = $('#search');
   iNoti = $('#notifi');
   search = $('.search-box')
+
+  $('.modal').modal();
   
   iPerfil.on('click',function(){
     $('.ide2').addClass('hide');
@@ -19,6 +21,7 @@ $(document).ready(function(){
   })
   
   iSearch.on('click', function(){
+    $('.ide1').addClass('hide');
     $('.ide2').addClass('hide');
     search.removeClass('hide');
   })
