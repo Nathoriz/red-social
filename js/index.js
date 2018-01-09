@@ -78,9 +78,9 @@ $(document).ready(function () {
     $name = $('#first_name');
     $last = $('#last_name');
     $email = $('#email');
-    $checkbox = $("#test5");
-    $butonSign = $('#btn-registrar');
     $password = $('#password');
+    $checkbox = $("#test5");
+    $butonSign = $('#btn-registrar');  
     $logOut = $('#btn-logout');
     $btnAauth = $('#btn-firebaseAuth');
 
@@ -114,8 +114,7 @@ $(document).ready(function () {
         var regex = /^[a-zA-Z]*$/;
         if (regex.test(input) && input.length > 3) {
             verifyName = true;
-            // activeBoton(); 
-            debugger
+            activeBoton();            
             $buton.removeClass('disabled');
         } else {
             desactiveBoton();
