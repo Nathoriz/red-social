@@ -30,6 +30,11 @@ $(document).ready(function(){
     $('.ide2').removeClass('hide');
     $('.ide1').addClass('hide');
     search.addClass('hide');
-  
   })
+| 
+  $('.friend').on('click', function(){
+    alert('dsjgf');
+  })
+
+
 })

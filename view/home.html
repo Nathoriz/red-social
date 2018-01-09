@@ -89,7 +89,7 @@
           <div class="row">
               <div class="file-field input-field col s3">
                   <div class="btn file-path-wrapper">
-                      <span>File</span>
+                      <span><i class="material-icons">publish</i></span>
                       <input type="file" class="file-path validate">
                   </div>
               </div>
@@ -100,12 +100,102 @@
 
   <!-- Modal Structure 2 -->
   <div id="modal2" class="modal">
-      <div class="modal-content">
-          <h4>no sabo</h4>
-          <p>A bunch of text</p>
+    <div class="modal-content">
+      <div>
+        <h5 class="bottom-line center">BC-Chat</h5>
+        <div class="card-tabs">
+          <ul class="tabs tabs-fixed-width">
+            <li class="tab"><a href="#all">TODOS</a></li>
+            <li class="tab"><a class="active" href="#actives">ACTIVOS</a></li>
+          </ul>
+        </div>
+        <div class="card-content grey lighten-4">
+          <div id="actives">
+            <div class="col s12 friend">
+              <div class="row valign-wrapper">
+                <div class="col s3">
+                  <img src="https://www.istockphoto.com/resources/images/PhotoFTLP/img_75929395.jpg"
+                    alt="" class="circle responsive-img">
+                </div>
+                <div class="col s9">
+                  <span class="black-text">
+                    Fátima Lescano
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col s12">
+              <div class="row valign-wrapper">
+                <div class="col s3">
+                  <img src="http://100x100.net/wp-content/uploads/2015/02/starwars.png"
+                    alt="" class="circle responsive-img">
+                </div>
+                <div class="col s9">
+                  <span class="black-text">
+                    Bethoven Jr.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="all">          
+            <div class="col s12 friend">
+              <div class="row valign-wrapper">
+                  <div class="col s3">
+                    <img src="https://www.istockphoto.com/resources/images/PhotoFTLP/img_75929395.jpg"
+                      alt="" class="circle responsive-img">
+                  </div>
+                  <div class="col s9">
+                    <span class="black-text">
+                      Nat Ordoñez
+                    </span>
+                  </div>
+                </div>
+            </div>
+            <div class="col s12">
+              <div class="row valign-wrapper">
+                  <div class="col s3">
+                    <img src="http://100x100.net/wp-content/uploads/2015/02/starwars.png"
+                      alt="" class="circle responsive-img">
+                  </div>
+                  <div class="col s9">
+                    <span class="black-text">
+                      Mark Torres
+                    </span>
+                  </div>
+                </div>
+            </div>
+            <div class="col s12">
+              <div class="row valign-wrapper">
+                <div class="col s3">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5yW4ObEAobqhkRIbSVe7xL8yq4Yfm7NT5xj115MATo8bKze5m"
+                    alt="" class="circle responsive-img">
+                </div>
+                <div class="col s9">
+                  <span class="black-text">
+                    Bradley Smith
+                  </span>
+              </div>
+            </div>
+            <div class="col s12">
+              <div class="row valign-wrapper">
+                <div class="col s3">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaWAtWoLIS9B8v1Q80gAE8ZC0wFI7Zsm-5gJb21xb2TmpsoeRYJA"
+                    alt="" class="circle responsive-img">
+                </div>
+                <div class="col s9">
+                  <span class="black-text">
+                    Julius Brain
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       </div>
       </div>
       <div class="modal-footer">
-          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat"><i class="material-icons">home</i></a>
       </div>
   </div>
 
@@ -168,32 +258,8 @@
   </div>
   </div>
 
-
-  <!-- AQUI SE ENCUENTRA LA ESTRUCTURA DEL PERFIL__________________ -->
-  <!-- <div class="col s12 m8 offset-m2 l6 offset-l3">
-    <div class="card-panel">
-      <div class="row valign-wrapper">
-        <div class="col s2">
-          <img src="https://scontent.xx.fbcdn.net/v/t1.0-1/p100x100/12308548_1652013631729953_5748824127610103583_n.jpg?oh=446bc36f5ff19c8b13edb3a02b1291aa&oe=5ABE898B"
-            alt="" class="circle responsive-img">        
-        </div>
-        <div class="col s10">
-          <span class="black-text">
-            This is a square image. Add the "circle" class to it to make it appear circular.
-          </span>
-        </div>
-      </div>
-      <p><i class="material-icons">message</i>Comentar</p>
-      
-      <p><i class="material-icons">favorite</i>Me encanta</p> 
-      <p><i class="material-icons">markunread</i>Mensaje</p> 
-    </div>
-  </div> -->
-
-
   <div class="ide3 card hide">
     <div class="card-image waves-effect waves-block waves-light">
-      <!-- <p>hola , este es mi meme</p> -->
       <img class="activator" src="https://scontent.xx.fbcdn.net/v/t1.0-1/p100x100/12308548_1652013631729953_5748824127610103583_n.jpg?oh=446bc36f5ff19c8b13edb3a02b1291aa&oe=5ABE898B">
     </div>
     <div class="card-content">
@@ -213,13 +279,10 @@
         <i class="material-icons right">close</i>
       </span>
 
-
       <div class="input-field col s6">
         <i class="material-icons prefix">mode_edit</i>
         <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-        <!-- <label for="icon_prefix2">First Name</label> -->
       </div>
-
 
     </div>
   </div>
