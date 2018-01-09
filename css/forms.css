@@ -1,21 +1,32 @@
-/* Estilos form1 */
-/* .container {
-  padding-top: 3em;
-
-} */
-
+/* Estilos form 1 y 2 */
 .bg-user {
   background-image: url(../assets/images/bg.jpg);
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100vh;
 }
 
-h5 {
-  color: #ffffff;
+h2 {
+  color:  #45d6a9;
 }
 
+.check {
+  width: 150px;
+  margin: 3.5em 0;
+}
 
-a>.border {
-  border-radius: 20px;
+.btn, .btn-large, .btn-flat {
+  display: block;
+  margin-top: 1.5em;
+  width: 100%;
+}
+
+p {
+  color: #fff;
+}
+
+.back {
+  color: #45d6a9;
+  font-size: 20px; 
 }
