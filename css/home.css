@@ -1,3 +1,14 @@
 #hide {
-    background: red;
+  background: red;
+}
+/* 
+.before-nav {
+    position: absolute;
+    top: 0;
+
+}  */
+
+.searching {
+  border: 1px solid gray;
+  border-radius: 21px;
 }
