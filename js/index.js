@@ -1,6 +1,29 @@
 
 $(document).ready(function () {
 
+    // AQUI HACEMOS LA VALIDACION DE NUESTRO BOTON INDEPENDIENTE REGISTRO 
+    // Llamando elementos del html 
+    $name = $('#first_name');
+    $last = $('#last_name');
+    $email = $('#email');
+    $password = $('#password');
+    $passConf = $('#passConfir');
+    $butonSign = $('#btn-registrar');
+    $logOut = $('#btn-logout');
+    $btnAauth = $('#btn-firebaseAuth');
+
+
+    $emailModal = $('#emailModal');
+    $passwordModal = $('#passwordModal');
+    $btnLogin = $('#btn-login');
+
+    //Variables verificadoras booleanas
+    var verifyName = false;
+    var verifyLastName = false;
+    var verifyEmail = false;
+    var verifycheck = false;
+    var verifyPassword = false;
+
     //Agregando funcionalidad al boton de facebook 
     $('#btn-facebook').on('click', loginFacebook);
     function loginFacebook() {
@@ -58,112 +81,6 @@ $(document).ready(function () {
         }
     }
 
-    //Funcion para mostrar imagen
-    function showImage(user) {
-        $('#showPhoto').append("<img src='" + user.photoURL + "' />");
-        $('#namePerson').append("<p>" + user.displayName + "</p>");
-    }
-    // funcion para que se guarde la informacion automaticamente en firebase sin repetirse
-    function saveDate(user) {
-        var usuario = {
-            uid: user.uid,
-            nombre: user.displayName,
-            email: user.email,
-            foto: user.photoURL
-        }
-        firebase.database().ref('redes/' + user.uid).set(usuario);
-    }
-    // AQUI HACEMOS LA VALIDACION DE NUESTRO BOTON INDEPENDIENTE REGISTRO 
-    // Llamando elementos del html 
-    $name = $('#first_name');
-    $last = $('#last_name');
-    $email = $('#email');
-    $password = $('#password');
-    $checkbox = $("#test5");
-    $butonSign = $('#btn-registrar');  
-    $logOut = $('#btn-logout');
-    $btnAauth = $('#btn-firebaseAuth');
-
-
-    $emailModal = $('#emailModal');
-    $passwordModal = $('#passwordModal');
-    $btnLogin = $('#btn-login');
-
-    //Variables verificadoras booleanas
-    var verifyName = false;
-    var verifyLastName = false;
-    var verifyEmail = false;
-    var verifycheck = false;
-    var verifyPassword = false;
-
-    //Agregamos eventos a nuestros input
-    $password.on('keyup', function () {       
-        var input = $password.val();
-        // var regex = /^[a-zA-Z]*$/;
-        if (input.length > 3) {
-            verifyPassword = true;
-            activeBoton();
-        } else {
-            desactiveBoton();
-        }
-    });
-
-    $name.on('keyup', function (e) {
-        console.log(e);
-        var input = $name.val();
-        var regex = /^[a-zA-Z]*$/;
-        if (regex.test(input) && input.length > 3) {
-            verifyName = true;
-            activeBoton();            
-            $buton.removeClass('disabled');
-        } else {
-            desactiveBoton();
-        }
-    });
-
-    $last.on('keyup focus', function () {
-        var input = $last.val();
-        var regex = /^[a-zA-Z]*$/;
-        if (regex.test(input) && input.length > 3) {
-            verifyLastName = true;
-            activeBoton();
-        } else {
-            desactiveBoton();
-        }
-    });
-
-    $email.on('keyup focus', function () {
-        var input = $email.val();
-        var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if (regex.test(input)) {
-            verifyEmail = true;
-            activeBoton();
-        } else {
-            desactiveBoton();
-        }
-
-    });
-    $checkbox.on('click', function () {
-        if ($checkbox.prop("checked")) {
-            verifycheck = true;
-            activeBoton();
-        } else {
-            desactiveBoton();
-        }
-
-    });
-
-    function activeBoton() {
-        //verifyName && verifyLastName && verifycheck
-        if (verifyName && verifyLastName && verifycheck && verifyEmail) {            
-            $butonSign.removeClass('disabled');
-        }
-    }
-
-    function desactiveBoton() {
-        $butonSign.addClass('disabled');
-    }
-
     $btnLogin.on('click', function () {
         var $email = $emailModal.val();
         var $password = $passwordModal.val();
@@ -173,44 +90,133 @@ $(document).ready(function () {
 
     })
 
+    // $btnAauth.on('click', function () {
+    //     var email = $email.val();
+    //     var password = $password.val();
+    //     var auth = firebase.auth();
+    //     var promise = auth.createUserWithEmailAndPassword(email, password);
+    //     console.log(auth);
+    //     promise.catch(e => console.log(e.message));
+    // })
+
     $btnAauth.on('click', function () {
-        var email = $email.val();
-        var password = $password.val();
-        var auth = firebase.auth();
-        var promise = auth.createUserWithEmailAndPassword(email, password);
-        promise.catch(e => console.log(e.message));
-        $('.order-1').addClass('hide');
-        $('.order-2').removeClass('hide');
-    })
-
-    $butonSign.on('click', function () {
-        firebase.database().ref('registro').push({
-            nombre: $name.val(),
-            apellido: $last.val(),
-            email: $email.val(),
-            acepta: $checkbox.val()
+        var referencia = firebase.database().ref('registro');
+        referencia.push({
+            nombre: $name.val(), 
+            contrasena: $passConf.val(),
+            apellido: $last.val()
+        }).then(function () {
+            console.log('dato almacenado correctamente');
+        }).catch(function (error) {
+            console.log('detectado un error', error);
+            // firebase.database().ref('registro').push({
+            //     nombre: $name.val(),
+            //     contrasena: $passConf.val(),
+            //     apellido: $last.val()
+            // })
         })
-    })
 
-    $logOut.on('click', function (e) {
-        firebase.auth().onAuthStateChanged(function (user) {
-            if (user) {
-                console.log(user);
-                var displayName = user.displayName;
-                var email = user.email;
-                var emailVerified = user.emailVerified;
-                var photoURL = user.photoURL;
-                var isAnonymous = user.isAnonymous;
-                var uid = user.uid;
-                var providerData = user.providerData;
-                $logOut.removeClass('hide');
+        $logOut.on('click', function (e) {
+            firebase.auth().onAuthStateChanged(function (user) {
+                if (user) {
+                    console.log(user);
+                    var displayName = user.displayName;
+                    var email = user.email;
+                    var emailVerified = user.emailVerified;
+                    var photoURL = user.photoURL;
+                    var isAnonymous = user.isAnonymous;
+                    var uid = user.uid;
+                    var providerData = user.providerData;
+                    $logOut.removeClass('hide');
+                } else {
+                    console.log('no logeado');
+                    $logOut.addClass('hide');
+                    // User is signed out.
+                    // ...
+                }
+            });
+
+        })
+
+
+        //Funcion para mostrar imagen
+        function showImage(user) {
+            $('#showPhoto').append("<img src='" + user.photoURL + "' />");
+            $('#namePerson').append("<p>" + user.displayName + "</p>");
+        }
+        // funcion para que se guarde la informacion automaticamente en firebase sin repetirse
+        function saveDate(user) {
+            var usuario = {
+                uid: user.uid,
+                nombre: user.displayName,
+                email: user.email,
+                foto: user.photoURL
+            }
+            firebase.database().ref('redes/' + user.uid).set(usuario);
+        }
+
+
+        //Agregamos eventos a nuestros input
+        $password.on('keyup', function () {
+            var input = $password.val();
+            // var regex = /^[a-zA-Z]*$/;
+            if (input.length > 3) {
+                verifyPassword = true;
+                activeBoton();
             } else {
-                console.log('no logeado');
-                $logOut.addClass('hide');
-                // User is signed out.
-                // ...
+                desactiveBoton();
             }
         });
+
+        // $name.on('keyup', function (e) {
+        //     console.log(e);
+        //     var input = $name.val();
+        //     var regex = /^[a-zA-Z]*$/;
+        //     if (regex.test(input) && input.length > 3) {
+        //         verifyName = true;
+        //         activeBoton();
+        //         $buton.removeClass('disabled');
+        //     } else {
+        //         desactiveBoton();
+        //     }
+        // });
+
+        // $last.on('keyup focus', function () {
+        //     var input = $last.val();
+        //     var regex = /^[a-zA-Z]*$/;
+        //     if (regex.test(input) && input.length > 3) {
+        //         verifyLastName = true;
+        //         activeBoton();
+        //     } else {
+        //         desactiveBoton();
+        //     }
+        // });
+
+        $email.on('keyup focus', function () {
+            var input = $email.val();
+            var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if (regex.test(input)) {
+                verifyEmail = true;
+                activeBoton();
+            } else {
+                desactiveBoton();
+            }
+
+        });
+
+        function activeBoton() {
+            //verifyName && verifyLastName && verifycheck
+            if (verifyName && verifyLastName && verifyEmail) {
+                $butonSign.removeClass('disabled');
+            }
+        }
+
+        function desactiveBoton() {
+            $butonSign.addClass('disabled');
+        }
+
+
+
 
     })
 })
