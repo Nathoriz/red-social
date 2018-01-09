@@ -17,6 +17,7 @@ $(document).ready(function(){
     $('.ide1').addClass('hide');
     $('.ide2').addClass('hide');
     search.addClass('hide');
+    $('.ide3').removeClass('hide');
   
   })
   
