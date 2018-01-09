@@ -78,9 +78,9 @@ $(document).ready(function () {
     $name = $('#first_name');
     $last = $('#last_name');
     $email = $('#email');
-    $checkbox = $("#test5");
-    $butonSign = $('#btn-registrar');
     $password = $('#password');
+    $checkbox = $("#test5");
+    $butonSign = $('#btn-registrar');  
     $logOut = $('#btn-logout');
     $btnAauth = $('#btn-firebaseAuth');
 
