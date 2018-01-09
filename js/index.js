@@ -1,6 +1,29 @@
 
 $(document).ready(function () {
 
+    // AQUI HACEMOS LA VALIDACION DE NUESTRO BOTON INDEPENDIENTE REGISTRO 
+    // Llamando elementos del html 
+    $name = $('#first_name');
+    $last = $('#last_name');
+    $email = $('#email');
+    $password = $('#password');
+    $checkbox = $("#test5");
+    $butonSign = $('#btn-registrar');
+    $logOut = $('#btn-logout');
+    $btnAauth = $('#btn-firebaseAuth');
+
+
+    $emailModal = $('#emailModal');
+    $passwordModal = $('#passwordModal');
+    $btnLogin = $('#btn-login');
+
+    //Variables verificadoras booleanas
+    var verifyName = false;
+    var verifyLastName = false;
+    var verifyEmail = false;
+    var verifycheck = false;
+    var verifyPassword = false;
+
     //Agregando funcionalidad al boton de facebook 
     $('#btn-facebook').on('click', loginFacebook);
     function loginFacebook() {
@@ -58,6 +81,56 @@ $(document).ready(function () {
         }
     }
 
+    $btnLogin.on('click', function () {
+        var $email = $emailModal.val();
+        var $password = $passwordModal.val();
+        var auth = firebase.auth();
+        var promise = auth.signInWithEmailAndPassword($email, $password);
+        promise.catch(e => console.log("hola"));
+
+    })
+
+    $btnAauth.on('click', function () {
+        var email = $email.val();
+        var password = $password.val();
+        var auth = firebase.auth();
+        var promise = auth.createUserWithEmailAndPassword(email, password);
+        console.log(auth);
+        promise.catch(e => console.log(e.message));     
+    })
+
+    $logOut.on('click', function (e) {
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                console.log(user);
+                var displayName = user.displayName;
+                var email = user.email;
+                var emailVerified = user.emailVerified;
+                var photoURL = user.photoURL;
+                var isAnonymous = user.isAnonymous;
+                var uid = user.uid;
+                var providerData = user.providerData;
+                $logOut.removeClass('hide');
+            } else {
+                console.log('no logeado');
+                $logOut.addClass('hide');
+                // User is signed out.
+                // ...
+            }
+        });
+
+    })
+
+    // $btnAauth.on('click', function () {
+    //     firebase.database().ref('registro').push({
+    //         nombre: $name.val(),
+    //         apellido: $last.val(),
+    //         email: $email.val(),
+    //         acepta: $checkbox.val()
+    //     })
+    // })
+
+
     //Funcion para mostrar imagen
     function showImage(user) {
         $('#showPhoto').append("<img src='" + user.photoURL + "' />");
@@ -73,31 +146,10 @@ $(document).ready(function () {
         }
         firebase.database().ref('redes/' + user.uid).set(usuario);
     }
-    // AQUI HACEMOS LA VALIDACION DE NUESTRO BOTON INDEPENDIENTE REGISTRO 
-    // Llamando elementos del html 
-    $name = $('#first_name');
-    $last = $('#last_name');
-    $email = $('#email');
-    $password = $('#password');
-    $checkbox = $("#test5");
-    $butonSign = $('#btn-registrar');  
-    $logOut = $('#btn-logout');
-    $btnAauth = $('#btn-firebaseAuth');
 
-
-    $emailModal = $('#emailModal');
-    $passwordModal = $('#passwordModal');
-    $btnLogin = $('#btn-login');
-
-    //Variables verificadoras booleanas
-    var verifyName = false;
-    var verifyLastName = false;
-    var verifyEmail = false;
-    var verifycheck = false;
-    var verifyPassword = false;
 
     //Agregamos eventos a nuestros input
-    $password.on('keyup', function () {       
+    $password.on('keyup', function () {
         var input = $password.val();
         // var regex = /^[a-zA-Z]*$/;
         if (input.length > 3) {
@@ -114,7 +166,7 @@ $(document).ready(function () {
         var regex = /^[a-zA-Z]*$/;
         if (regex.test(input) && input.length > 3) {
             verifyName = true;
-            activeBoton();            
+            activeBoton();
             $buton.removeClass('disabled');
         } else {
             desactiveBoton();
@@ -143,19 +195,10 @@ $(document).ready(function () {
         }
 
     });
-    $checkbox.on('click', function () {
-        if ($checkbox.prop("checked")) {
-            verifycheck = true;
-            activeBoton();
-        } else {
-            desactiveBoton();
-        }
-
-    });
 
     function activeBoton() {
         //verifyName && verifyLastName && verifycheck
-        if (verifyName && verifyLastName && verifycheck && verifyEmail) {            
+        if (verifyName && verifyLastName && verifyEmail) {
             $butonSign.removeClass('disabled');
         }
     }
@@ -164,53 +207,7 @@ $(document).ready(function () {
         $butonSign.addClass('disabled');
     }
 
-    $btnLogin.on('click', function () {
-        var $email = $emailModal.val();
-        var $password = $passwordModal.val();
-        var auth = firebase.auth();
-        var promise = auth.signInWithEmailAndPassword($email, $password);
-        promise.catch(e => console.log("hola"));
 
-    })
 
-    $btnAauth.on('click', function () {
-        var email = $email.val();
-        var password = $password.val();
-        var auth = firebase.auth();
-        var promise = auth.createUserWithEmailAndPassword(email, password);
-        promise.catch(e => console.log(e.message));
-        $('.order-1').addClass('hide');
-        $('.order-2').removeClass('hide');
-    })
 
-    $butonSign.on('click', function () {
-        firebase.database().ref('registro').push({
-            nombre: $name.val(),
-            apellido: $last.val(),
-            email: $email.val(),
-            acepta: $checkbox.val()
-        })
-    })
-
-    $logOut.on('click', function (e) {
-        firebase.auth().onAuthStateChanged(function (user) {
-            if (user) {
-                console.log(user);
-                var displayName = user.displayName;
-                var email = user.email;
-                var emailVerified = user.emailVerified;
-                var photoURL = user.photoURL;
-                var isAnonymous = user.isAnonymous;
-                var uid = user.uid;
-                var providerData = user.providerData;
-                $logOut.removeClass('hide');
-            } else {
-                console.log('no logeado');
-                $logOut.addClass('hide');
-                // User is signed out.
-                // ...
-            }
-        });
-
-    })
 })
