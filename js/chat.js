@@ -24,7 +24,13 @@ $(document).ready(function() {
       var pic = $('<img/>');
       pic.attr('src', 'http://scriboeditorial.com/wp-content/uploads/2015/03/sa_1425548456Mi%20chica%20ideal-583x583.jpg');
       pic.appendTo(boxPic);
-      // areaChat.val();
+      areaChat.val('');
     }
+  });
+  
+  // Muestra caja de emojis
+  $('.box-emoji').hide();
+  $('.emojis').on('click', function() {
+    $('.box-emoji').toggle();
   });
 });
