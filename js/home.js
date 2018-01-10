@@ -4,6 +4,9 @@ $(document).ready(function() {
   iSearch = $('#search');
   iNoti = $('#notifi');
   search = $('.search-box');
+  boxChat = $('.box-chat');
+
+  boxChat.focus();
 
   $('.modal').modal();
   
@@ -36,6 +39,10 @@ $(document).ready(function() {
   });
 
   $('.friend').on('click', function() {
-    alert('dsjgf');
+    window.location.href = 'chat.html';
   });
+
+  // $('.return').on('click', function() {
+  //   window.location.href = 'home.html';
+  // });
 });
