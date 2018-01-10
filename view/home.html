@@ -20,22 +20,27 @@
           <input type="" class="searching teal accent-1" placeholder="Buscar en BigCoders">
         </div>
         <ul class="col s12">
-          <li class="col s3">
+          <li class="hide-on-small-only col m2 l2">
+            <img src="../assets/images/logo.png" alt="logo">
+          </li>
+          <li class="hide-on-small-only col m6 l6">
+          </li>
+          <li class="col s3 m1 l1">
             <a href="#" id="profile">
               <i class="material-icons">person</i>
             </a>
           </li>
-          <li class="col s3">
+          <li class="col s3 m1 l1">
             <a href="#" id="home">
               <i class="material-icons">home</i>
             </a>
           </li>
-          <li class="col s3">
+          <li class="col s3 m1 l1">
             <a href="#" id="search">
               <i class="material-icons">search</i>
             </a>
           </li>
-          <li class="col s3">
+          <li class="col s3 m1 l1">
             <a href="#" id="notifi">
               <i class="material-icons">notifications_active</i>
             </a>
@@ -44,7 +49,6 @@
       </div>
     </div>
   </nav>
-  
   <!-- BOTONES FLOTANDO CON LAS OPCIONES DE PUBLICACIÓN -->
   <div class="fixed-action-btn horizontal click-to-toggle">
     <a class="btn-floating btn-large teal accent-3">
@@ -194,35 +198,39 @@
   </div>
 
   <!-- AQUI SE ENCUENTRA LA ESTRUCTURA DEL PERFIL -->
-  <div class="ide1 card hide">
-    <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator circle responsive-img" src="http://scriboeditorial.com/wp-content/uploads/2015/03/sa_1425548456Mi%20chica%20ideal-583x583.jpg">
+  <div class="ide1 card hide" id="ide1">
+    <div class="row">
+      <div class="col s12 m4 l3">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator circle responsive-img" src="http://scriboeditorial.com/wp-content/uploads/2015/03/sa_1425548456Mi%20chica%20ideal-583x583.jpg">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">Amalia Burn
+            <i class="material-icons right">more_vert</i>
+          </span>
+          <p>100 Siguiendo</p>
+          <p>340 Seguidores</p>
+          <p><i class="material-icons">settings_applications</i>Configuración</p>
+          <p><i class="material-icons">help_outline</i>Centro de ayuda</p>
+          <p>
+            <a href="#">Ver perfil</a><i class="tiny material-icons">arrow_forward</i>
+          </p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4 bottom-line">Biografía
+            <i class="material-icons right">close</i>
+          </span>
+          <p>
+            Soy una periodista y escritora zimbabuense nacionalizada británica.
+            Inicie hace mucho en el mundo Tech y también soy UX designer. <br>
+            Intereses: literatura (La chica del tren y Escrito en el agua), codear​​.
+          </p>
+        </div>
+      </div> 
     </div>
-    <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4">Amalia Burn
-        <i class="material-icons right">more_vert</i>
-      </span>
-      <p>100 Siguiendo</p>
-      <p>340 Seguidores</p>
-      <p><i class="material-icons">settings_applications</i>Configuración</p>
-      <p><i class="material-icons">help_outline</i>Centro de ayuda</p>
-      <p>
-        <a href="#">Ver perfil</a><i class="tiny material-icons">arrow_forward</i>
-      </p>
-    </div>
-    <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4 bottom-line">Biografía
-        <i class="material-icons right">close</i>
-      </span>
-      <p>
-        Soy una periodista y escritora zimbabuense nacionalizada británica.
-        Inicie hace mucho en el mundo Tech y también soy UX designer. <br>
-        Intereses: literatura (La chica del tren y Escrito en el agua), codear​​.
-      </p>
-    </div>
-  </div>  
+  </div>
   <!-- AQUI SE ENCUENTRA LA ESTRUCTURA DE LAS NOTIFICACIONES -->
-  <div class="ide2 col s12 m8 offset-m2 l6 offset-l3 hide">
+  <div class="ide2 col s12 m8 offset-m2 l6 offset-l3 hide" id="ide2">
     <div class="card-panel grey lighten-5 z-depth-1">
       <div class="row valign-wrapper">
         <div class="col s3">
@@ -264,113 +272,125 @@
     </div>
   </div>
   <!-- AQUI SE ENCUENTRA LA ESTRUCTURA DEL NEWSFEED -->  
-  <div class="ide4 card">
-    <div id="user-post" class="card-content grey lighten-4 hide">
-      <div>
-        <div class="col s12">
-          <div class="row valign-wrapper">
-            <div class="col s3">
-              <img src="http://scriboeditorial.com/wp-content/uploads/2015/03/sa_1425548456Mi%20chica%20ideal-583x583.jpg"
-                alt="" class="circle responsive-img">
-            </div>
-            <div class="col s9">
-              <span class="black-text">
-                Amalia Burn <i class="tiny material-icons">public</i> 
-              </span>
-            </div>
+  <div class="ide4 card" id="ide4">
+    <div class="row">
+      <div class="hide-on-small-only col m4 l2">
+        <div class="card">
+          <div class="card-image">
+            <img src="http://scriboeditorial.com/wp-content/uploads/2015/03/sa_1425548456Mi%20chica%20ideal-583x583.jpg">
+            <span class="card-title">Amalia Burn</span>
           </div>
-        </div>
+          <div class="card-content">
+            <p></p>
+          </div>
+        </div>  
       </div>
-      <div class="col s12 container-msg">
-          
-      </div>
-    </div>
-    
-    <div class="card col s6">
-      <div class="card-content grey lighten-4">
-        <div>
-          <div class="col s12">
-            <div class="row valign-wrapper">
-              <div class="col s3">
-                <img src="https://media-exp2.licdn.com/mpr/mpr/shrinknp_200_200/p/3/005/083/39a/167d585.jpg"
-                  alt="" class="circle responsive-img">
-              </div>
-              <div class="col s9">
-                <span class="black-text">
-                  Gabriela Segura <a>añadió un nuevo tema de discusión</a> 
-                </span>
+      <div class="col s12 m8 l10">
+        <div id="user-post" class="card-content grey lighten-4 hide">
+          <div>
+            <div class="col s12 m12 l12">
+              <div class="row valign-wrapper">
+                <div class="col s3 m2 l1">
+                  <img src="http://scriboeditorial.com/wp-content/uploads/2015/03/sa_1425548456Mi%20chica%20ideal-583x583.jpg"
+                    alt="" class="circle responsive-img">
+                </div>
+                <div class="col s9 m10 l11">
+                  <span class="black-text">
+                    Amalia Burn <i class="tiny material-icons">public</i> 
+                  </span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col s3 bg-user center">
-          <img src="../assets/images/img.jpg" alt="user-image" class="responsive-img">
-        </div>
-      </div>
-      <div class="card-content">
-        <p>
-          Announcing three new free Codecademy courses! Now you'll be able to use JavaScript for backend web development with #ExpressJS and #NodeJS, laying the groundwork for building fully integrated web applications.
-        </p>
-      </div>
-      <div class="card-tabs">
-        <ul class="tabs tabs-fixed-width">
-          <li class="tab"><a><i class="material-icons">thumb_up</i></a></li>
-          <li class="tab"><a href="#test5"><i class="material-icons">chat</i></a></li>
-          <li class="tab"><a><i class="material-icons">redo</i></a></li>
-        </ul>
-      </div>
-      <div class="card-content grey lighten-4" id="test5">
-        <div class="row">
-          <div class="input-field col s12">
-            <textarea id="comment" class="materialize-textarea" placeholder="¿Que piensas?"></textarea>
+          <div class="col s12 container-msg">    
           </div>
         </div>
-      </div>
-    </div>
-    <div class="card col s6">
-      <div class="card-content grey lighten-4">
-        <div>
-          <div class="col s12">
-            <div class="row valign-wrapper">
-              <div class="col s3">
-                <img src="https://www.saveafox.org/wp-content/uploads/thegem-logos/logo_81d7280ce76f2531ec743d34cc4c7606_1x.png"
-                  alt="" class="circle responsive-img">
+        <div class="card col s12 m12 l12">
+          <div class="card-content grey lighten-4">
+            <div>
+              <div class="col s12  m12 l12">
+                <div class="row valign-wrapper">
+                  <div class="col s3 m2 l1">
+                    <img src="https://media-exp2.licdn.com/mpr/mpr/shrinknp_200_200/p/3/005/083/39a/167d585.jpg"
+                      alt="" class="circle responsive-img">
+                  </div>
+                  <div class="col s9 m10 l11">
+                    <span class="black-text">
+                      Gabriela Segura <a>añadió un nuevo tema de discusión</a> 
+                    </span>
+                  </div>
+                </div>
               </div>
-              <div class="col s9">
-                <span class="black-text">
-                  Save a Fox <a>added a new photo</a> 
-                </span>
+            </div>
+            <div class="col s12 m12 l12 bg-user center">
+              <img src="../assets/images/img.jpg" alt="user-image" class="responsive-img">
+            </div>
+          </div>
+          <div class="card-content">
+            <p>
+              Announcing three new free Codecademy courses! Now you'll be able to use JavaScript for backend web development with #ExpressJS and #NodeJS, laying the groundwork for building fully integrated web applications.
+            </p>
+          </div>
+          <div class="card-tabs">
+            <ul class="tabs tabs-fixed-width">
+              <li class="tab"><a><i class="material-icons">thumb_up</i></a></li>
+              <li class="tab"><a href="#test5"><i class="material-icons">chat</i></a></li>
+              <li class="tab"><a><i class="material-icons">redo</i></a></li>
+            </ul>
+          </div>
+          <div class="card-content grey lighten-4" id="test5">
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea id="comment" class="materialize-textarea" placeholder="¿Que piensas?"></textarea>
               </div>
             </div>
           </div>
         </div>
-        <div class="col s3 bg-user center">
-          <img src="../assets/images/white-fox.jpg" alt="user-image" class="responsive-img">
-        </div>
-      </div>
-      <div class="card-content">
-        <p>
-          What Is Save A Fox? We Rescue Foxes From Fur Farms. The purpose of this website is not for profit of any kind. It is to educate people on the suffering of an animal that is perpetuated by the fur trade. Join with me in helping save these beautiful animals.
-          <br> <a href="#">#SaveAnimals</a>
-        </p>
-      </div>
-      <div class="card-tabs">
-        <ul class="tabs tabs-fixed-width">
-          <li class="tab"><a><i class="material-icons">thumb_up</i></a></li>
-          <li class="tab"><a href="#test4"><i class="material-icons">chat</i></a></li>
-          <li class="tab"><a><i class="material-icons">redo</i></a></li>
-        </ul>
-      </div>
-      <div class="card-content grey lighten-4" id="test4">
-        <div class="row">
-          <div class="input-field col s12">
-            <textarea id="comment" class="materialize-textarea" placeholder="¿Que piensas?"></textarea>
+        <div class="card col s12  m12 l12">
+          <div class="card-content grey lighten-4">
+            <div>
+              <div class="col s12 m12 l12">
+                <div class="row valign-wrapper">
+                  <div class="col s3  m2 l1">
+                    <img src="https://www.saveafox.org/wp-content/uploads/thegem-logos/logo_81d7280ce76f2531ec743d34cc4c7606_1x.png"
+                      alt="" class="circle responsive-img">
+                  </div>
+                  <div class="col s9">
+                    <span class="black-text">
+                      Save a Fox <a>added a new photo</a> 
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 bg-user center">
+              <img src="../assets/images/white-fox.jpg" alt="user-image" class="responsive-img">
+            </div>
+          </div>
+          <div class="card-content">
+            <p>
+              What Is Save A Fox? We Rescue Foxes From Fur Farms. The purpose of this website is not for profit of any kind. It is to educate people on the suffering of an animal that is perpetuated by the fur trade. Join with me in helping save these beautiful animals.
+              <br> <a href="#">#SaveAnimals</a>
+            </p>
+          </div>
+          <div class="card-tabs">
+            <ul class="tabs tabs-fixed-width">
+              <li class="tab"><a><i class="material-icons">thumb_up</i></a></li>
+              <li class="tab"><a href="#test4"><i class="material-icons">chat</i></a></li>
+              <li class="tab"><a><i class="material-icons">redo</i></a></li>
+            </ul>
+          </div>
+          <div class="card-content grey lighten-4" id="test4">
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea id="comment" class="materialize-textarea" placeholder="¿Que piensas?"></textarea>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
   <script src="../vendors/js/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <!-- <script src="../vendors/materialize/js/materialize.min.js"></script> -->
