@@ -54,7 +54,7 @@ $(document).ready(function() {
       message.text(textPost.val());
       message.appendTo(containerMsg);
       $('#user-post').removeClass('hide');
-      // textPost.val().clear();
+      textPost.val('');
     }
   });
 });
