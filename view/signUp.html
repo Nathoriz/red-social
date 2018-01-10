@@ -1,86 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!--Import Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="../css/forms.css">
-  <link rel="stylesheet" href="../vendors/materialize/css/materialize.min.css">
-  <title>signUp</title>
-</head>
-<body>
-  <section class="bg-user">
-    <div class="container">
-      <div class="row">
-        <div class="col s12">
-          <a href="../index.html">
-            <i class="small material-icons back">chevron_left</i>
-          </a>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../css/forms.css">
+    <link rel="stylesheet" href="../vendors/materialize/css/materialize.min.css">
+    <title>signUp</title>
+  </head>
+  <body>
+    <section class="bg-user">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <a href="../index.html">
+              <i class="small material-icons back">chevron_left</i>
+            </a>
+          </div>
+          <div class="col s12 center">
+            <h2>Registrarse</h2>
+          </div>
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="first_name" type="text" class="validate">
+                <label for="first_name">Nombre</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="last_name" type="text" class="validate">
+                <label for="last_name">Apellido</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="emailSignUp" type="email" class="validate">
+                <label for="email">Correo</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="passwordSignUp" type="password" class="validate">
+                <label for="password">Contraseña</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="passConfir" type="password" class="validate">
+                <label for="password">Confirmar contraseña</label>
+              </div>
+            </div>
+          </form>
         </div>
-        <div class="col s12 center">
-          <h2>Registrarse</h2>
-        </div>
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s6">
-              <input id="first_name" type="text" class="validate">
-              <label for="first_name">Nombre</label>
-            </div>
-            <div class="input-field col s6">
-              <input id="last_name" type="text" class="validate">
-              <label for="last_name">Apellido</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="emailSignUp" type="email" class="validate">
-              <label for="email">Correo</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="passwordSignUp" type="password" class="validate">
-              <label for="password">Contraseña</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="passConfir" type="password" class="validate">
-              <label for="password">Confirmar contraseña</label>
-            </div>
-          </div>
-        </form>
       </div>
-    </div>
-    <div class="col s12 center">
-      <a id="btn-firebaseAuth" href="" class="waves-effect waves-light btn-flat btn-large teal accent-3">UNIRSE</a>
-    </div>
-
-  </section>
-
-
-
-  <script src="../vendors/js/jquery-3.2.1.min.js"></script>
-  <!-- Compiled and minified JavaScript -->
-  <script src="../vendors/materialize/js/materialize.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyAckNjYavFDbVEYJEE70JXM5-tU0-wFuIs",
-      authDomain: "red-social1.firebaseapp.com",
-      databaseURL: "https://red-social1.firebaseio.com",
-      projectId: "red-social1",
-      storageBucket: "red-social1.appspot.com",
-      messagingSenderId: "772159467090"
-    };
-    firebase.initializeApp(config);
-  </script>
-  <script src="../js/index.js"></script>
-</body>
-
+      <div class="col s12 center">
+        <a id="btn-firebaseAuth" href="" class="waves-effect waves-light btn-flat btn-large teal accent-3">UNIRSE</a>
+      </div>
+    </section>
+    <script src="../vendors/js/jquery-3.2.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="../vendors/materialize/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAckNjYavFDbVEYJEE70JXM5-tU0-wFuIs",
+        authDomain: "red-social1.firebaseapp.com",
+        databaseURL: "https://red-social1.firebaseio.com",
+        projectId: "red-social1",
+        storageBucket: "red-social1.appspot.com",
+        messagingSenderId: "772159467090"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script src="../js/index.js"></script>
+  </body>
 </html>
