@@ -1,27 +1,24 @@
-Red social
-=============================
+# **Red social**
+--------
 
-.....
+- ## **Objetivo**
 
-Introduction
-------------
+    Crear una red social.
 
+- ## **Puntos a considerar**
+    - Perfiles de usuarios
 
-Puntos a considerar
----------------
+    - Un newsfeed donde puedes ver las actualizaciones de todos tus contactos
 
- 1. Ctextp.
- 1. weqwe **Google** seqwe **dsds > SIGfdfsN-INdsf fds** ewqeqw.
+    - Un lugar donde poder escribir posts
 
+    - Un lugar para subir fotos
 
-Support
--------
+    - Capacidad para poder tener amigos o para poder seguir a personas/marcas dentro de la red social
 
-- texto
+    - Ser mobile friendly, etc.
 
-Autor
--------
+- ## **Autores**
 
-texto
 
 
