@@ -14,29 +14,34 @@
 <body>
   <!-- ICONOS DE NAVEGACIÓN -->
   <nav class="col s12">
-    <div class="nav-wrapper row  teal accent-3">
-      <ul class="col s12">
-        <li class="col s3">
-          <a href="#" id="profile">
-            <i class="material-icons">person</i>
-          </a>
-        </li>
-        <li class="col s3">
-          <a href="#" id="home">
-            <i class="material-icons">home</i>
-          </a>
-        </li>
-        <li class="col s3">
-          <a href="#" id="search">
-            <i class="material-icons">search</i>
-          </a>
-        </li>
-        <li class="col s3">
-          <a href="#" id="notifi">
-            <i class="material-icons">notifications_active</i>
-          </a>
-        </li>
-      </ul>
+    <div class="row">
+      <div class="nav-wrapper row  teal accent-3">
+        <div class="col s12 center search-box hide">
+          <input type="" class="searching teal accent-1" placeholder="Buscar en BigCoders">
+        </div>
+        <ul class="col s12">
+          <li class="col s3">
+            <a href="#" id="profile">
+              <i class="material-icons">person</i>
+            </a>
+          </li>
+          <li class="col s3">
+            <a href="#" id="home">
+              <i class="material-icons">home</i>
+            </a>
+          </li>
+          <li class="col s3">
+            <a href="#" id="search">
+              <i class="material-icons">search</i>
+            </a>
+          </li>
+          <li class="col s3">
+            <a href="#" id="notifi">
+              <i class="material-icons">notifications_active</i>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
   
@@ -83,7 +88,14 @@
   <div id="modal2" class="modal">
     <div class="modal-content">
       <div>
-        <h5 class="bottom-line center">BC-Chat</h5>
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field">
+              <i class="material-icons prefix">search</i>
+              <input id="icon_prefix" type="text" class="validate" placeholder="Busca personas y grupos">
+            </div>
+          </div>
+        </form>
         <div class="card-tabs">
           <ul class="tabs tabs-fixed-width">
             <li class="tab"><a href="#all">TODOS</a></li>
@@ -95,7 +107,7 @@
             <div class="col s12 friend">
               <div class="row valign-wrapper">
                 <div class="col s3">
-                  <img src="https://www.istockphoto.com/resources/images/PhotoFTLP/img_75929395.jpg"
+                  <img src="https://orig00.deviantart.net/ee08/f/2009/073/e/d/free_red_panda_icon_100x100_by_supertuffpinkpuff.png"
                     alt="" class="circle responsive-img">
                 </div>
                 <div class="col s9">
@@ -209,19 +221,6 @@
       </p>
     </div>
   </div>  
-  <!-- Estructura de búsqueda -->
-  <div class="container center search-box hide">
-    <div class="row">
-      <div class="col s12">
-        <div class="row">
-          <div class="input-field col s7 push-s2 searching">
-            <i class="material-icons prefix">search</i>
-            <input type="text" id="autocomplete-input" class="autocomplete" placeholder="Buscar">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
   <!-- AQUI SE ENCUENTRA LA ESTRUCTURA DE LAS NOTIFICACIONES -->
   <div class="ide2 col s12 m8 offset-m2 l6 offset-l3 hide">
     <div class="card-panel grey lighten-5 z-depth-1">

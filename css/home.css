@@ -9,8 +9,14 @@
 }  */
 
 .searching {
-  border: 1px solid gray;
+  box-sizing: border-box;
+  border: none;
+  background: transparent;
   border-radius: 21px;
+  color:#616161;
+  padding: 0.5em;
+  text-align: center;
+  outline: none;
 }
 
 .bottom-line::after {

@@ -3,7 +3,7 @@ $(document).ready(function() {
   iHome = $('#home');
   iSearch = $('#search');
   iNoti = $('#notifi');
-  search = $('.search-box')
+  search = $('.search-box');
 
   $('.modal').modal();
   
