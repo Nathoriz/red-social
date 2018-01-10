@@ -28,3 +28,34 @@ p {
   color: #45d6a9;
   font-size: 20px; 
 }
+
+.center-items-h {
+  padding: 0 15% 0 15%; 
+}
+
+div.center-items-v {
+  margin: 5% 0 5% 0;
+  padding-top: 2% !important;
+}
+
+.modal {
+  width: 33% !important;
+}
+
+@media only screen and (min-width: 1200px) {
+  .opacity {
+    background-color: rgba(31, 31, 31, 0.6);
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .opacity {
+    background-color: rgba(31, 31, 31, 0.6);
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .opacity {
+    background-color: rgba(31, 31, 31, 0.6);
+  }
+}
