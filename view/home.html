@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,13 +11,13 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <title>home</title>
 </head>
-<body class="">
-  <!-- ICONOS DE NAVEGACION_______________________ -->
+<body>
+  <!-- ICONOS DE NAVEGACIÓN -->
   <nav class="col s12">
     <div class="nav-wrapper row  teal accent-3">
       <ul class="col s12">
         <li class="col s3">
-          <a href="#" id="perfil">
+          <a href="#" id="profile">
             <i class="material-icons">person</i>
           </a>
         </li>
@@ -40,59 +39,46 @@
       </ul>
     </div>
   </nav>
-  <div class="container center search-box hide">
-    <div class="row">
-      <div class="col s12">
-        <div class="row">
-          <div class="input-field col s7 push-s2 searching">
-            <i class="material-icons prefix">search</i>
-            <input type="text" id="autocomplete-input" class="autocomplete" placeholder="Buscar">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- BOTON FLOTANDO CON LAS OPCIONES DE PUBLICACION____________________ -->
+  
+  <!-- BOTONES FLOTANDO CON LAS OPCIONES DE PUBLICACIÓN -->
   <div class="fixed-action-btn horizontal click-to-toggle">
-      <a class="btn-floating btn-large teal accent-3">
-          <i class="material-icons">menu</i>
-      </a>
-      <ul class="">
-          <li>
-              <a class="waves-effect waves-light modal-trigger btn-floating red" href="#modal1">
-                  <i class="material-icons">mode_edit</i>
-              </a>
-          </li>
-          <li>
-              <a class="waves-effect waves-light modal-trigger btn-floating yellow darken-1" href="#modal2">
-                  <i class="material-icons">chat</i>
-              </a>
-          </li>
-      </ul>
+    <a class="btn-floating btn-large teal accent-3">
+      <i class="material-icons">menu</i>
+    </a>
+    <ul class="">
+      <li>
+        <a class="waves-effect waves-light modal-trigger btn-floating red" href="#modal1">
+          <i class="material-icons">mode_edit</i>
+        </a>
+      </li>
+      <li>
+        <a class="waves-effect waves-light modal-trigger btn-floating yellow darken-1" href="#modal2">
+          <i class="material-icons">chat</i>
+        </a>
+      </li>
+    </ul>
   </div>
   <!-- Modal Structure 1-->
   <div id="modal1" class="modal">
-      <div class="modal-content">
-          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat right">X</a>
-          <div class="input-field col s6">
-              <i class="material-icons prefix">account_circle</i>
-              <textarea id="icon_prefix2" class="materialize-textarea" placeholder="¿Qué compartiras hoy?"></textarea>
-              <!-- <label for="icon_prefix2"></label> -->
-          </div>
+    <div class="modal-content">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat right">X</a>
+      <div class="input-field col s6">
+        <i class="material-icons prefix">account_circle</i>
+        <textarea id="icon_prefix2" class="materialize-textarea" placeholder="¿Qué compartiras hoy?"></textarea>
       </div>
-      <div class="modal-footer">
-          <div class="row">
-              <div class="file-field input-field col s3">
-                  <div class="btn file-path-wrapper">
-                      <span><i class="material-icons">publish</i></span>
-                      <input type="file" class="file-path validate">
-                  </div>
-              </div>
+    </div>
+    <div class="modal-footer">
+      <div class="row">
+        <div class="file-field input-field col s3">
+          <div class="btn file-path-wrapper">
+            <span><i class="material-icons">publish</i></span>
+            <input type="file" class="file-path validate">
           </div>
-          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Enviar</a>
+        </div>
       </div>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Enviar</a>
+    </div>
   </div>
-
   <!-- Modal Structure 2 -->
   <div id="modal2" class="modal">
     <div class="modal-content">
@@ -192,98 +178,119 @@
       <div class="modal-footer">
           <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat"><i class="material-icons">home</i></a>
       </div>
+    </div>
   </div>
 
-  <!-- AQUI SE ENCUENTRA LA ESTRUCTURA DEL PERFIL__________________ -->
+  <!-- AQUI SE ENCUENTRA LA ESTRUCTURA DEL PERFIL -->
   <div class="ide1 card hide">
     <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator circle responsive-img" src="https://scontent.xx.fbcdn.net/v/t1.0-1/p100x100/12308548_1652013631729953_5748824127610103583_n.jpg?oh=446bc36f5ff19c8b13edb3a02b1291aa&oe=5ABE898B">
+      <img class="activator circle responsive-img" src="http://scriboeditorial.com/wp-content/uploads/2015/03/sa_1425548456Mi%20chica%20ideal-583x583.jpg">
     </div>
     <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4">kamaly zapana
+      <span class="card-title activator grey-text text-darken-4">Amalia Burn
         <i class="material-icons right">more_vert</i>
       </span>
       <p>100 Siguiendo</p>
-      <p>100 Seguidores</p>
-      <p>Configuracion</p>
-      <p>Centro de ayuda</p>
+      <p>340 Seguidores</p>
+      <p><i class="material-icons">settings_applications</i>Configuración</p>
+      <p><i class="material-icons">help_outline</i>Centro de ayuda</p>
       <p>
-        <a href="#">Ver perfil</a>
+        <a href="#">Ver perfil</a><i class="tiny material-icons">arrow_forward</i>
       </p>
     </div>
     <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4">Descripciond personal
+      <span class="card-title grey-text text-darken-4 bottom-line">Biografía
         <i class="material-icons right">close</i>
       </span>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, perferendis eum, explicabo reprehenderit ex voluptate
-        deleniti tempore fuga consequuntur iste dicta repellat consequatur, maxime error. Et, adipisci laboriosam? Earum,
-        error!.
+      <p>
+        Soy una periodista y escritora zimbabuense nacionalizada británica.
+        Inicie hace mucho en el mundo Tech y también soy UX designer. <br>
+        Intereses: literatura (La chica del tren y Escrito en el agua), codear​​.
       </p>
     </div>
   </div>  
+  <!-- Estructura de búsqueda -->
+  <div class="container center search-box hide">
+    <div class="row">
+      <div class="col s12">
+        <div class="row">
+          <div class="input-field col s7 push-s2 searching">
+            <i class="material-icons prefix">search</i>
+            <input type="text" id="autocomplete-input" class="autocomplete" placeholder="Buscar">
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <!-- AQUI SE ENCUENTRA LA ESTRUCTURA DE LAS NOTIFICACIONES__________________ -->
+  <!-- AQUI SE ENCUENTRA LA ESTRUCTURA DE LAS NOTIFICACIONES -->
   <div class="ide2 col s12 m8 offset-m2 l6 offset-l3 hide">
     <div class="card-panel grey lighten-5 z-depth-1">
       <div class="row valign-wrapper">
-        <div class="col s2">
-          <img src="https://scontent.xx.fbcdn.net/v/t1.0-1/p100x100/12308548_1652013631729953_5748824127610103583_n.jpg?oh=446bc36f5ff19c8b13edb3a02b1291aa&oe=5ABE898B"
+        <div class="col s3">
+          <img src="http://media-hearth.cursecdn.com/avatars/252/906/635754873347018821.jpeg"
             alt="" class="circle responsive-img">
         </div>
-        <div class="col s10">
+        <div class="col s9">
           <span class="black-text">
-            This is a square image. Add the "circle" class to it to make it appear circular.
+            Mario Terri le dio me gusta a tu publicación.
           </span>
         </div>
       </div>
     </div>
     <div class="card-panel grey lighten-5 z-depth-1">
-    <div class="row valign-wrapper">
-      <div class="col s2">
-        <img src="https://scontent.xx.fbcdn.net/v/t1.0-1/p100x100/12308548_1652013631729953_5748824127610103583_n.jpg?oh=446bc36f5ff19c8b13edb3a02b1291aa&oe=5ABE898B"
-          alt="" class="circle responsive-img">
-      </div>
-      <div class="col s10">
-        <span class="black-text">
-          This is a square image. Add the "circle" class to it to make it appear circular.
-        </span>
-      </div>
-    </div>
-  </div>
-  </div>
-
-
-  <!-- AQUI SE ENCUENTRA LA ESTRUCTURA DEL PERFIL__________________ -->
-  <!-- <div class="col s12 m8 offset-m2 l6 offset-l3">
-    <div class="card-panel">
       <div class="row valign-wrapper">
-        <div class="col s2">
-          <img src="https://scontent.xx.fbcdn.net/v/t1.0-1/p100x100/12308548_1652013631729953_5748824127610103583_n.jpg?oh=446bc36f5ff19c8b13edb3a02b1291aa&oe=5ABE898B"
-            alt="" class="circle responsive-img">        
+        <div class="col s3">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYbDRCe0l3A_ONBIvuKHGTDC3GmY1ey2tKC9P54yuEVU4vgj8Jhw"
+            alt="" class="circle responsive-img">
         </div>
-        <div class="col s10">
+        <div class="col s9">
           <span class="black-text">
-            This is a square image. Add the "circle" class to it to make it appear circular.
+            Recordatorio: Tienes un evento esta semana.
           </span>
         </div>
       </div>
-      <p><i class="material-icons">message</i>Comentar</p>
-      
-      <p><i class="material-icons">favorite</i>Me encanta</p> 
-      <p><i class="material-icons">markunread</i>Mensaje</p> 
     </div>
-  </div> -->
-
-  <!-- AQUI SE ENCUENTRA LA ESTRUCTURA DEL NEWSFEED__________________ -->  
-  <div class="ide3 card hide">
+    <div class="card-panel grey lighten-5 z-depth-1">
+      <div class="row valign-wrapper">
+        <div class="col s3">
+          <img src="http://forums.ferra.ru/uploads/profile/photo-106401.png"
+            alt="" class="circle responsive-img">
+        </div>
+        <div class="col s9">
+          <span class="black-text">
+            Armando Cisneros añadió un artículo nuevo.
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- AQUI SE ENCUENTRA LA ESTRUCTURA DEL NEWSFEED -->  
+  <div class="ide4 card hide">
     <div class="card col s6">
       <div class="card-content grey lighten-4">
-        <div class="col s3 circle bg-user">
-          <img src="../assets/images/white-fox.jpg" alt="user-image" class="circle responsive-img">
+        <div>
+          <div class="col s12">
+            <div class="row valign-wrapper">
+              <div class="col s3">
+                <img src="https://media-exp2.licdn.com/mpr/mpr/shrinknp_200_200/p/3/005/083/39a/167d585.jpg"
+                  alt="" class="circle responsive-img">
+              </div>
+              <div class="col s9">
+                <span class="black-text">
+                  Gabriela Segura <a>añadió un nuevo tema de discusión</a> 
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col s3 bg-user center">
+          <img src="../assets/images/img.jpg" alt="user-image" class="responsive-img">
         </div>
       </div>
       <div class="card-content">
-        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+        <p>
+          Announcing three new free Codecademy courses! Now you'll be able to use JavaScript for backend web development with #ExpressJS and #NodeJS, laying the groundwork for building fully integrated web applications.
+        </p>
       </div>
       <div class="card-tabs">
         <ul class="tabs tabs-fixed-width">
@@ -298,45 +305,56 @@
             <textarea id="comment" class="materialize-textarea" placeholder="¿Que piensas?"></textarea>
           </div>
         </div>
-        <div class="row">
+      </div>
+    </div>
+    <div class="card col s6">
+      <div class="card-content grey lighten-4">
+        <div>
+          <div class="col s12">
+            <div class="row valign-wrapper">
+              <div class="col s3">
+                <img src="https://www.saveafox.org/wp-content/uploads/thegem-logos/logo_81d7280ce76f2531ec743d34cc4c7606_1x.png"
+                  alt="" class="circle responsive-img">
+              </div>
+              <div class="col s9">
+                <span class="black-text">
+                  Save a Fox <a>added a new photo</a> 
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col s3 bg-user center">
+          <img src="../assets/images/white-fox.jpg" alt="user-image" class="responsive-img">
         </div>
       </div>
-  <div class="ide3 card hide">
-    <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" src="https://scontent.xx.fbcdn.net/v/t1.0-1/p100x100/12308548_1652013631729953_5748824127610103583_n.jpg?oh=446bc36f5ff19c8b13edb3a02b1291aa&oe=5ABE898B">
-    </div>
-    <div class="card-content">
-      <span class="card-title activator">
-        <i class="material-icons right">message</i>
-      </span>
-      <span class="card-title ">
-        <i class="material-icons ">favorite</i>
-      </span>
-      <p>
-        <i class="material-icons right">favorite</i>
-      </p>
-    </div>
-    <div class="card-reveal">
-      <span class="card-title">Comentario
-        <i class="material-icons right">close</i>
-      </span>
-
-      <div class="input-field col s6">
-        <i class="material-icons prefix">mode_edit</i>
-        <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+      <div class="card-content">
+        <p>
+          What Is Save A Fox? We Rescue Foxes From Fur Farms. The purpose of this website is not for profit of any kind. It is to educate people on the suffering of an animal that is perpetuated by the fur trade. Join with me in helping save these beautiful animals.
+          <br> <a href="#">#SaveAnimals</a>
+        </p>
       </div>
-
+      <div class="card-tabs">
+        <ul class="tabs tabs-fixed-width">
+          <li class="tab"><a><i class="material-icons">thumb_up</i></a></li>
+          <li class="tab"><a href="#test4"><i class="material-icons">chat</i></a></li>
+          <li class="tab"><a><i class="material-icons">redo</i></a></li>
+        </ul>
+      </div>
+      <div class="card-content grey lighten-4" id="test4">
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="comment" class="materialize-textarea" placeholder="¿Que piensas?"></textarea>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-
-
-
+  
   <script src="../vendors/js/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <!-- <script src="../vendors/materialize/js/materialize.min.js"></script> -->
   <!-- <script src="../materialize.js"></script> -->
   <script src="../js/home.js"></script>
 </body>
-
 </html>
