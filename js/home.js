@@ -4,10 +4,6 @@ $(document).ready(function() {
   iSearch = $('#search');
   iNoti = $('#notifi');
   search = $('.search-box');
-  boxChat = $('.box-chat');
-
-  // Enfoca input de chat
-  boxChat.focus();
 
   // Despliega modales
   $('.modal').modal();
@@ -58,8 +54,7 @@ $(document).ready(function() {
       message.text(textPost.val());
       message.appendTo(containerMsg);
       $('#user-post').removeClass('hide');
-      textPost.val().clear();
+      // textPost.val().clear();
     }
   });
-
 });

@@ -355,6 +355,21 @@ input.textarea {
   font-weight: 400;
 }
 
+.send {
+  background: #1de9b6;
+  border: none;
+  border-radius: 7px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  position: fixed;
+  display: block;
+  bottom: 10px;
+  padding: 0.5em;
+  right:  7px;
+  outline: none;
+  z-index: 100;
+}
 .emojis {
   position: fixed;
   display: block;
