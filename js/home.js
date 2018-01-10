@@ -45,15 +45,29 @@ $(document).ready(function() {
   // Postea en el muro
   btnPost = $('.btn-posting');
   textPost = $('.text-posting');
-  containerMsg = $('.container-msg');
+  containerPost = $('.container-post');
 
   btnPost.on('click', function() {
     if (textPost.val() !== '') {
       var message = $('<p/>');
-      message.addClass('card-content');
+      var contMsg = $('<div/>');
+      var card = $('<div/>');
+      var cardImg = $('<div/>');
+      var userImage = $('<img/>');
+      var name = $('<span/>');
+      contMsg.addClass('card-content');
       message.text(textPost.val());
-      message.appendTo(containerMsg);
-      $('#user-post').removeClass('hide');
+      message.appendTo(contMsg);
+      card.addClass('card');
+      contMsg.appendTo(card);
+      cardImg.addClass('card-image');
+      userImage.attr('src', 'http://scriboeditorial.com/wp-content/uploads/2015/03/sa_1425548456Mi%20chica%20ideal-583x583.jpg');
+      userImage.appendTo(cardImg);
+      name.addClass('card-title');
+      name.text('Amalia Burn');
+      name.appendTo(cardImg);
+      cardImg.appendTo(card);
+      card.appendTo(containerPost);
       textPost.val('');
     }
   });
