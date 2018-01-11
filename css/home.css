@@ -60,9 +60,6 @@ a {
   background:#1de9b6;
   z-index: 100;
   -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
 }
 
 .back {
@@ -153,9 +150,6 @@ a {
   -ms-border-radius: 100%;
   background-color: rgba(255,255,255,0.9);
   -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
 }
 
 .chat .day {
@@ -171,9 +165,6 @@ a {
   margin-bottom: 20px;
   cursor: default;
   -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
 }
 
 .other .msg {
@@ -247,9 +238,6 @@ a {
   transition: all .4s cubic-bezier(0.565, -0.260, 0.255, 1.410);
   cursor: default;
   -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
 }
 
 @media screen and (max-width: 800px) {
@@ -271,9 +259,6 @@ a {
   float: right;
   cursor: default;
   -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
 }
 
 .msg time:before{
@@ -380,6 +365,7 @@ input.textarea {
   outline: none;
   z-index: 100;
 }
+
 .emojis {
   position: fixed;
   display: block;
@@ -393,6 +379,7 @@ input.textarea {
   z-index: 100;
   cursor: pointer;
 }
+
 .emojis:active {
   opacity: 0.9;
 }
@@ -400,4 +387,21 @@ input.textarea {
 .return {
   color: #fff;
   text-decoration: none;
+}
+
+.box-emoji {
+  width: 70px;
+  background: #a7ffeb;
+  border-radius: 7px;
+  box-sizing: border-box;
+  padding: 0.3em 0;
+  position: fixed;
+  display: block;
+  bottom: 40px;
+}
+
+.box-emoji>ul>li {
+  list-style: none;
+  display: block;
+  margin-right: 0;
 }
