@@ -3,6 +3,10 @@
   background: red;
 }
 
+.material-icons {
+  cursor: pointer;
+}
+
 .searching {
   box-sizing: border-box;
   border: none;
@@ -25,6 +29,7 @@
 .pic-user {
   width: 100px;
 }
+
 /* Estilos del chat */
 @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
@@ -34,11 +39,13 @@ html, body {
   font-family: 'Lato', sans-serif;
   margin: 0px auto;
 }
-::selection{
+
+::selection {
   background: rgba(82,179,217,0.3);
   color: inherit;
 }
-a{
+
+a {
   color: rgba(82,179,217,0.9);
 }
 
