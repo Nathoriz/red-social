@@ -29,12 +29,15 @@ $(document).ready(function () {
     function loginFacebook() {
         if (!firebase.auth().currentUser) {
             var provider = new firebase.auth.FacebookAuthProvider();
-            // provider.addScope('https:www.googleapis.com/auth/plus.login');
-            firebase.auth().signInWithPopup(provider).then(function (result) {
+            provider.addScope('user_friends');
+            firebase.auth().signInWithPopup(provider)
+            .then(function (result) {
                 var token = result.credential.accessToken;
                 var user = result.user;
+                alert(user);
+                console.log('autenticado usuario ', user);
                 saveDate(user);
-                showImage(user)
+                showImage(user);
             }).catch(function (error) {
                 // Handle Errors here.
                 var errorCode = error.code;
@@ -44,7 +47,7 @@ $(document).ready(function () {
                 // The firebase.auth.AuthCredential type that was used.
                 var credential = error.credential;
                 if (error.code === 'auth/account-exists-with-different-credential') {
-                    alert('Es el mismo usuario');
+                    alert(error);
                 }
             });
         }
@@ -88,7 +91,7 @@ $(document).ready(function () {
         const promise = auth.signInWithEmailAndPassword(email, password);
         promise.catch(function (error) {
 
-            alert("correo no existe");
+            alert(error);
         });
 
     })
@@ -99,7 +102,7 @@ $(document).ready(function () {
         var auth = firebase.auth();
         var promise = auth.createUserWithEmailAndPassword(emailA, pass);
         promise.catch(function (error) {
-            alert("no fue creado el correo");
+            alert(error);
         });
     })
 
