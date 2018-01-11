@@ -1,7 +1,9 @@
-.backfound {
-  background-image: url(../assets/images/bg.jpg);
+.bg-logo {
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/images/logo.png");
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover;
-  height: auto;
+  background-size: 75%;
+  position: absolute;
 }

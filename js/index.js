@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 $(document).ready(function () {
 
@@ -211,3 +212,10 @@ $(document).ready(function () {
 
 
 })
+=======
+$(document).ready(function() {
+  setTimeout(function() { 
+    window.location.href = 'view/signIn.html';
+  }, 3000);
+});
+>>>>>>> 976c0af54ca23efbc45a24603ae5d8c5a7632320

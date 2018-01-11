@@ -1,9 +1,9 @@
-# **Red social**
+# **BigCoders Social Network**
 --------
 
 - ## **Objetivo**
 
-    Crear una red social.
+    Crear una red social que contribuya a la solución de una problemática.
 
 - ## **Puntos a considerar**
     - Perfiles de usuarios
@@ -16,9 +16,18 @@
 
     - Capacidad para poder tener amigos o para poder seguir a personas/marcas dentro de la red social
 
-    - Ser mobile friendly, etc.
+    - Ser mobile friendly.
 
-- ## **Autores**
+- ## **Mobile design**
+
+![](assets/images/view1.png)
+
+![](assets/images/view2.png)
+
+![](assets/images/view3.png)
+
+![](assets/images/view4.png)
+
 
 
 
