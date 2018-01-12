@@ -88,7 +88,7 @@ $(document).ready(function () {
     const auth = firebase.auth();
     const promise = auth.signInWithEmailAndPassword(email, password);
     promise.catch(function (error) {
-      alert("correo no existe");
+      alert(error);
     });
   });
 
@@ -98,7 +98,7 @@ $(document).ready(function () {
     var auth = firebase.auth();
     var promise = auth.createUserWithEmailAndPassword(emailA, pass);
     promise.catch(function (error) {
-      alert("no fue creado el correo");
+      alert(error);
     });
   });
 
