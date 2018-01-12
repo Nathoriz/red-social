@@ -22,7 +22,7 @@
   content: "";
   margin-top: 8px;
   display: block;
-  border: 2px solid #1de9b6;
+  border: 2px solid #29b6f6;
   width: 100%;
 }
 
@@ -57,7 +57,7 @@ a {
   right: 0px;
   width: 100%;
   height: 50px;
-  background:#1de9b6;
+  background: #29b6f6;
   z-index: 100;
   -webkit-touch-callout: none;
 }
@@ -351,7 +351,7 @@ input.textarea {
 }
 
 .send {
-  background: #1de9b6;
+  background: #29b6f6;
   border: none;
   border-radius: 7px;
   box-sizing: border-box;
@@ -391,7 +391,7 @@ input.textarea {
 
 .box-emoji {
   width: 70px;
-  background: #a7ffeb;
+  background: #b3e5fc;
   border-radius: 7px;
   box-sizing: border-box;
   padding: 0.3em 0;
@@ -404,4 +404,5 @@ input.textarea {
   list-style: none;
   display: block;
   margin-right: 0;
+  margin-bottom: 0.3em;
 }
