@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/ed-grid.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Chat</title>
+    <style>
+        .headChat {
+            border: 1px solid #333;
+        }
+
+        .cotentChat {
+            border: 1px solid #333;
+            height: 80vh;
+        }
+
+        .footChat {
+            border: 1px solid #333;
+        }
+
+        #plantilla {
+            list-style-type: none;
+            display: none;
+        }
+
+        .chat {
+            height: 70vh;
+            overflow-y: scroll;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            background-image: url(../assets/images/bg.jpg);
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        input {
+            background: rgb(211, 201, 201);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="headChat ed-container">
+        <h2 class="ed-item s-70">chat</h2>
+        <a href="../index.html">
+            <i class="material-icons ed-item to-right s-20">clear</i>
+        </a>
+    </header>
+    <section class="cotentChat ed-container">
+        <ul class="chat">
+        </ul>
+    </section>
+    <footer class="footChat ed-container">
+        <input id="Mensaje" type="text" placeholder="Mensaje" class="ed-item s-60">
+        <button class="circle" id="btnEnviar">Enviar</button>
+    </footer>
+    <li id="plantilla" class="">
+        <span class="chat-img ">
+        </span>
+        <div class=" ">
+            <strong class=" Nombre">Jack Sparrow</strong>
+            <span class="Tiempo"></span>
+        </div>
+        <p class="Mensaje">
+            Mensaje
+        </p>
+    </li>
+    <!-- Scripts jQuery, bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCaOIs4BhliYNnMMldXShrsVZnXfYBEzys",
+            authDomain: "nuevo-proyecto-redes.firebaseapp.com",
+            databaseURL: "https://nuevo-proyecto-redes.firebaseio.com",
+            projectId: "nuevo-proyecto-redes",
+            storageBucket: "nuevo-proyecto-redes.appspot.com",
+            messagingSenderId: "767755433743"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="../js/chat.js"></script>
+</body>
+
+</html>
