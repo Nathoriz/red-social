@@ -1,36 +1,51 @@
-$(document).ready(function() {
-  // Enfoca input de chat
-  $('.area-chat').focus();
-  
-  // mensajes del chat
-  chatBox = $('.chat-box');
-  areaChat = $('.area-chat');
-  btnSend = $('.send');
+//Variable con acceso a datos 
+var TablaDeBaseDatos = firebase.database().ref('chat');
+TablaDeBaseDatos.limitToLast(20).on('value', function(snapshot) {
+    $(".chat").html(""); // Limpiamos todo el contenido del chat
 
-  btnSend.on('click', function() {
-    if (areaChat.val() !== '') {
-      var text = $('<p/>');
-      text.text(areaChat.val());
-      var box = $('<div/>');
-      box.addClass('msg');
-      text.appendTo(box);
-      var lastbox = $('<li/>');
-      lastbox.addClass('self');
-      box.appendTo(lastbox);
-      lastbox.appendTo(chatBox);
-      var boxPic = $('<div/>');
-      boxPic.addClass('avatar');
-      boxPic.appendTo(lastbox);
-      var pic = $('<img/>');
-      pic.attr('src', 'http://scriboeditorial.com/wp-content/uploads/2015/03/sa_1425548456Mi%20chica%20ideal-583x583.jpg');
-      pic.appendTo(boxPic);
-      areaChat.val('');
-    }
-  });
-  
-  // Muestra caja de emojis
-  $('.box-emoji').hide();
-  $('.emojis').on('click', function() {
-    $('.box-emoji').toggle();
-  });
+    // Leer todos los mensajes en firebase
+    snapshot.forEach(function(e) {
+        var objeto = e.val(); // Asignar todos los valores a un objeto
+
+        // Validar datos nulos y agregar contenido en forma de lista etiqueta <li>
+        if ((objeto.Mensaje != null) && (objeto.Nombre != null)) {
+            // Copia el contenido al template y luego lo inserta en el chat
+            $("#plantilla").clone().prependTo(".chat");
+            $('.chat #plantilla').show(10);
+            $('.chat #plantilla .Nombre').html(objeto.Nombre);
+            $('.chat #plantilla .Mensaje').html(objeto.Mensaje);
+            $('.chat #plantilla .Tiempo').html(objeto.Fecha);
+            $('.chat #plantilla').attr("id", "");
+        }
+
+    });
+});
+
+
+firebase.database().ref('/users/').once('value').then(function(snapshot) {
+    var user = firebase.auth().currentUser;
+    var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+    var Nombre = user.displayName;
+    $('.chat-img').append("<img src='" + user.photoURL + "' class='circle ed-item s-20' />");
+
+    $('#btnEnviar').click(function() {
+
+        var formatofecha = new Date();
+        var d = formatofecha.getUTCDate();
+        var m = formatofecha.getMonth() + 1;
+        var y = formatofecha.getFullYear();
+        var h = formatofecha.getHours();
+        var min = formatofecha.getMinutes();
+
+        Fecha = d + "/" + m + "/" + y + " " + h + ":" + min;
+
+        TablaDeBaseDatos.push({
+            Nombre: Nombre,
+            Mensaje: $("#Mensaje").val(),
+            Fecha: Fecha
+        });
+        $("#Mensaje").val('');
+    });
+
+
 });

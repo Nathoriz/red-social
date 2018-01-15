@@ -1,24 +1,237 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="vendors/materialize/css/materialize.min.css">
-  <!--Import Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="css/index.css">
-  <title>BigCoders</title>
-  <link rel="Shortcut Icon" href="assets/icons/logo-circle.ico"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red social</title>
+    <!-- Material Design Lite -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="vendors/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.blue_grey-orange.min.css">
+    <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/chat.css">
+    <link rel="stylesheet" href="css/ed-grid.min.css">
 </head>
-<body class="light-blue lighten-1">
-  <div class="bg-logo">
-  </div>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-  <script src="materialize.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-  <script src="js/index.js"></script>
+
+<body>
+    <div class="">
+        <!-- Splash screen -->
+        <section id="page-splash" class="center ed-container full">
+            <div class="ed-item s-80 s-offset-10 l-offset-10 ">
+                <h3 class="">Conéctate con </h3>
+                <!-- <div class="">
+            <i class="material-icons prefix">account_circle</i>
+            <input type="email" id="email" class="id-item s-10">
+          </div>
+          <div>
+            <i class="material-icons prefix">https</i>
+            <input type="password" id="password">
+          </div> -->
+                <div>
+                    <button id="sign-in-button-google" class="btn-style">
+                        Google</button>
+                </div>
+                <div class="ed-container to-l">
+                    <hr class="id-item s-40 s-offset-15"> o
+                    <hr class="id-item s-40">
+                </div>
+                <div>
+                    <button id="sign-in-button-facebook" class="btn-style">
+                        Facebook</button>
+                </div>
+            </div>
+            <!-- <div>
+        <button id="sign-in-button-sign" class="btn-style">
+          Registrar </button>
+      </div>
+      <div>
+        <button id="log-in-button" class="btn-style">
+          Ingresar</button>
+      </div> -->
+        </section>
+        <!-- VISTA EN MOVIL -->
+        <header class="to-l">
+            <ul class="ed-menu s-horizontal nav-bar light-blue lighten-1">
+                <li id="menu-recent">
+                    <a>
+                        <i class="material-icons">home</i>
+                    </a>
+                </li>
+                <li id="menu-my-posts">
+                    <a>
+                        <i class="material-icons">code</i>
+                    </a>
+                </li>
+                <li id="menu-my-top-posts">
+                    <a>
+                        <i class="material-icons">person</i>
+                    </a>
+                </li>
+            </ul>
+            <div class="fixed-action-btn horizontal click-to-toggle">
+                <a class="btn-floating btn-large red">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul>
+                    <li id="add">
+                        <a class="btn-floating red">
+                            <i class="material-icons">mode_edit</i>
+                        </a>
+                    </li>
+                    <li id="chatmovil">
+                        <a class="btn-floating yellow darken-1" href="view/chat.html">
+                            <i class="material-icons">format_quote</i>
+                        </a>
+                    </li>
+                    <li id="">
+                        <a class="btn-floating yellow darken-1" id="sign-out-button">
+                            <i class="material-icons">code</i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <!-- Vista en escritorio -->
+        <header class="from-l">
+            <ul class="ed-menu s-horizontal nav-bar light-blue lighten-1">
+                <li id="menu-recent">
+                    <a>
+                        <i class="material-icons">person</i>
+                    </a>
+                </li>
+                <li id="menu-my-posts">
+                    <a>
+                        <i class="material-icons">home</i>
+                    </a>
+                </li>
+                <li id="menu-my-top-posts">
+                    <a>
+                        <i class="material-icons">chat</i>
+                    </a>
+                </li>
+            </ul>
+        </header>
+        <!-- VISTA EN MOVIL___________ -->
+        <main class="">
+            <!-- Show the add post form -->
+            <section class="" id="add-post" style="display:none">
+                <div class="">
+                    <!-- Card containing the inputs to add a new messages -->
+                    <form id="message-form">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <textarea class="mdl-textfield__input" rows="3" id="new-post-message"></textarea>
+                            <label class="mdl-textfield__label" for="new-post-message">Comenta aquí</label>
+                        </div>
+                        <button type="submit" class="onlybtn-add">
+                            Enviar </button>
+                    </form>
+            </section>
+            <!-- Show a list of recent posts -->
+            <section class="ed-container" id="recent-posts-list" style="display:none">
+                <div class="posts-container">
+                </div>
+            </section>
+            <!-- Show the list of user's posts -->
+            <section class="ed-container to-l" id="user-posts-list" style="display:none">
+                <div class="posts-container">
+                </div>
+            </section>
+            <!-- Show the list of top user's posts -->
+            <section class="ed-container to-l" id="top-user-posts-list" style="display:none">
+                <div class="posts-container">
+                </div>
+            </section>
+        </main>
+        <!-- VISTA EN ESCRITORIO________________ -->
+        <main class="from-l ed-container">
+            <div class="card">
+                <div class="card-image waves-effect waves-block waves-light" id="desktop-perfil">
+                </div>
+                <div class="card-content">
+                    <p>
+                        <a href="#">Agregar informarción +</a>
+                    </p>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Descripción
+                        <i class="material-icons right">close</i>
+                    </span>
+                    <p>
+                        Soy una periodista y escritora zimbabuense nacionalizada británica. Inicie hace mucho en el mundo Tech y también soy UX designer.
+                        <br> Intereses: literatura (La chica del tren y Escrito en el agua), codear​​.
+                    </p>
+                </div>
+            </div>
+            <!-- Show the add post form -->
+            <section class="ed-item l-30 l-offset-5">
+                <div id="postsDesk">
+                </div>
+            </section>
+            <!-- CHAT______________ -->
+            <section class="ed-item l-30 l-offset-5 chatDesktop">
+                <div class="lime">
+                    Chat
+                </div>
+                <div class="">
+                    <ul class="chat">
+                    </ul>
+                </div>
+                <!-- template del item del chat (Oculto: para agarrar un clon y llenarlo e insertar en el chat)-->
+                <li style="display:none" id="plantilla" class="">
+                    <span class="chat-img">
+                    </span>
+                    <div class="chat-body ">
+                        <div class="header">
+                            <strong class="primary-font Nombre">Jack Sparrow</strong>
+                            <small class="text-muted">
+                                <span class="glyphicon glyphicon-asterisk Tiempo"></span> 12/02/2015 </small>
+                        </div>
+                        <p class="Mensaje">
+                            Mensaje
+                        </p>
+                    </div>
+                </li>
+            </section>
+            <section class="ed-item l-30 l-offset-70">
+                <div class="input-group">
+                    <input id="Mensaje" type="text" class="" placeholder="Escribe un mensaje..." />
+                    <button class="" id="btnEnviar">
+                        Enviar</button>
+                </div>
+            </section>
+            <!-- Show a list of recent posts -->
+            <section class="ed-container" id="recent-posts-list">
+                <div class="posts-container">
+                </div>
+            </section>
+            <!-- Show the list of user's posts -->
+            <section class="ed-container" id="user-posts-list">
+                <div class="posts-container">
+                </div>
+            </section>
+        </main>
+        </div>
+        <script src="vendors/js/jquery-3.2.1.min.js"></script>
+        <script src="vendors/materialize/js/materialize.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyCaOIs4BhliYNnMMldXShrsVZnXfYBEzys",
+                authDomain: "nuevo-proyecto-redes.firebaseapp.com",
+                databaseURL: "https://nuevo-proyecto-redes.firebaseio.com",
+                projectId: "nuevo-proyecto-redes",
+                storageBucket: "nuevo-proyecto-redes.appspot.com",
+                messagingSenderId: "767755433743"
+            };
+            firebase.initializeApp(config);
+        </script>
+        <script src="js/main.js"></script>
+        <script src="js/index.js"></script>
+        <script src="js/chat.js"></script>
 </body>
+
 </html>
